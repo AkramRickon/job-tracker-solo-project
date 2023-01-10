@@ -1,0 +1,63 @@
+<form [formGroup]="applicationForm" (ngSubmit)="handleSubmit()" class="flex flex-col justify-center ">
+    <div>
+        <label for="cName" class="">Company Name</label>
+        <input type="text" id="cName" formControlName="companyName" class="border-b-2 border-slate-500">
+    </div>
+
+    <div>
+        <label for="position" class="">Position</label>
+        <input type="text" id="position" formControlName="position" class=" border-b-2 border-slate-500">
+    </div>
+
+    <div>
+        <label for="location" class="">Location</label>
+        <input type="text" id="location" formControlName="location" class="border-b-2 border-slate-500">
+    </div>
+
+    <div>
+        <label for="jobNature" class="">Job Nature</label>
+        <input type="text" id="jobNature" formControlName="jobNature" class="border-b-2 border-slate-500">
+    </div>
+
+    <div>
+        <label for="employmentType" class="">Employment Type</label>
+        <input type="text" id="employmentType" formControlName="employmentType" class="border-b-2 border-slate-500">
+    </div>
+
+    <div>
+        <label for="details" class="">Details</label>
+        <input type="text" id="details" formControlName="details" class="border-b-2 border-slate-500">
+    </div>
+
+    <div>
+        <label for="salary" class="">Salary</label>
+        <input type="text" id="salary" formControlName="salary" class="border-b-2 border-slate-500">
+    </div>
+
+    <div>
+        <label for="interviewDate" class="">Interview Date</label>
+        <input type="text" id="interviewDate" formControlName="interviewDate" class="border-b-2 border-slate-500">
+    </div>
+
+    <div>
+        <label for="jobLink" class="">Job Link</label>
+        <input type="text" id="jobLink" formControlName="jobLink" class="border-b-2 border-slate-500">
+    </div>
+
+    <div>
+
+        <select formControlName="status">
+            <option value="" disabled>Status</option>
+            <option value="pending">Pending</option>
+            <option value="processing">Processing</option>
+            <option value="rejected">Rejected</option>
+            <option value="accepted">Accepted</option>
+        </select>
+    </div>
+    <div>
+        <!-- <button type="submit" [disabled]="applicationForm.invalid" class=" text-white bg-blue-600 px-3 py-2 rounded-full">Submit</button> -->
+
+        <button type="submit" class="text-white bg-blue-600 px-3 py-2 rounded-full">Save Changes</button>
+    </div>
+
+</form>

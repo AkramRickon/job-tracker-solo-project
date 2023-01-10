@@ -1,0 +1,11 @@
+
+.navBarColor{
+    background-color: #D0DCF2;
+}
+.navLinkColor{
+    color:#64799e;
+}
+
+nav ul li a:hover{
+    color:#4C6796;
+}
