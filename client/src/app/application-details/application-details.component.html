@@ -1,0 +1,22 @@
+ 
+ <div class="my-5 mx-16 leading-loose">
+    <div>
+        <button (click)="handleGoBack()" class="bg-purple-700 text-white px-2 rounded-sm mt-2 mb-5"><fa-icon class="mr-1" [icon]="faArrowLeftLong"></fa-icon> Go Back</button>
+    </div>
+    <h2 class="text-xl font-bold underline  my-2">Job Application Details</h2>
+    <div>
+        <h2 class="text-lg my-2"><span class="font-bold">Company</span> : {{applicationDetails.companyName}}</h2>
+        <h3 class="font-bold text-lg  my-2"><span>Position</span> : {{applicationDetails.position}}</h3>
+        <h3 class="text-lg my-2"><span class="font-bold">Job Nature</span> : {{applicationDetails.jobNature}} </h3>
+        <h3 class="text-lg my-2"><span class="font-bold">Office Location</span> : {{applicationDetails.location}} </h3>
+        <h3 class="text-lg my-2"><span class="font-bold">Employment Type</span> : {{applicationDetails.employmentType}} </h3>
+        <h3 class="text-lg my-2"><span class="font-bold">Job Details</span> : {{applicationDetails.details}} </h3>
+        <h3 class="text-lg"><span class="font-bold">Salary</span> : {{applicationDetails.salary}} </h3>
+        <h3 class="text-lg my-2"><span class="font-bold">Applied Date</span> : {{applicationDetails.appliedDate | date}} </h3>
+        <h3 class="text-lg font-bold  my-2">
+            <span >Job Link</span> : <a href="{{applicationDetails.jobLink}}" target="_blank" class="bg-gray-300 px-3 py-1 rounded" > 
+            Visit <fa-icon [icon]="faPaperPlane"></fa-icon> </a> </h3>
+    </div>
+ </div>
+
+

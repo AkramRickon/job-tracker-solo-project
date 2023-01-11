@@ -1,4 +1,12 @@
 <div>
     <app-header></app-header>
-    <app-job-status [applicationList]="applicationList"></app-job-status>
+    <div *ngIf="applicationList">
+        <app-job-status [applicationList]="applicationList"></app-job-status>
+    </div>
+    <div *ngIf="applicationList">
+        <app-application-list [applicationList]="applicationList"></app-application-list>
+    </div>
 </div>
+<!-- <div>
+    
+</div> -->

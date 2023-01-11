@@ -1,0 +1,29 @@
+<div class="border p-2 ">
+    <span class="text-xl font-bold my-2"> {{title}}</span>
+
+
+    <div class="border my-2 p-2 rounded shadow-md" *ngFor="let application of applicationItems">
+        <div class="flex justify-between">
+            <span class="text-lg font-bold ">{{application.companyName}}</span>
+            <span class="">
+                <button (click)="handleUpdate(application._id)">
+                    <fa-icon class="m-2 text-slate-700" [icon]="faPencil"></fa-icon>
+                </button>
+                <button (click)="handleDelete(application._id)">
+                    <fa-icon class="text-red-500" [icon]="faTrashCan"></fa-icon>
+                </button>
+            </span>
+        </div>
+        <div>{{application.position}}</div>
+        <div>{{application.jobNature}}</div>
+        <div><span class="text-lg">Salary</span> : {{application.salary}}</div>
+
+        <div class="bg-gray-200 text-center">
+            <button class="w-full" (click)="handleDetails(application._id)">
+                <fa-icon class="m-2" [icon]="faPaperclip"></fa-icon>
+                View Details
+            </button>
+        </div>
+    </div>
+
+</div>

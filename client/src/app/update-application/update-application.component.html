@@ -1,9 +1,8 @@
 <div class="mt-12 mb-20 ">
 
     <form [formGroup]="applicationForm" (ngSubmit)="handleSubmit()"
-        class="flex flex-col justify-center formCustomization gap-2 p-3 shadow-lg">
-        <h2 class="text-xl font-semibold mb-2">Job Application Details</h2>
-
+        class="flex flex-col justify-center w-2/5 m-auto gap-2 p-3 shadow-lg">
+        <h2 class="text-xl font-semibold mb-2">Update Application Details</h2>
         <div>
             <!-- <label for="cName" class="">Company Name</label> -->
             <!-- <input type="text" id="cName" formControlName="companyName" class="border-b-2 border-slate-500"> -->
@@ -81,6 +80,7 @@
         </div>
 
         <div>
+
             <!-- <select formControlName="status">
                 <option value="" disabled>Status</option>
                 <option value="pending">Pending</option>
@@ -106,7 +106,8 @@
             <button type="submit"
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
         </div>
-        <div *ngIf="isSubmitted" class="flex p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-gray-800 dark:text-green-400"
+        <div *ngIf="isSubmitted"
+            class="flex p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-gray-800 dark:text-green-400"
             role="alert">
             <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
@@ -116,7 +117,7 @@
             </svg>
             <span class="sr-only">Info</span>
             <div>
-                <span class="font-medium">Application Added! </span> You are redirecting to Home page.
+                <span class="font-medium">Application Updated! </span> You are redirecting to Home page.
             </div>
         </div>
 

@@ -1,0 +1,20 @@
+<div>
+    <h2 class="text-3xl font-extrabold mx-16 list-text">Job Application List</h2>
+    <div class="flex mx-16">
+        <app-application-item class="column p-3" [title]="title1" [applicationItems]="pending"
+            (deleteApplicationEvent)="deleteApplicationFromList($event)">
+        </app-application-item>
+
+        <app-application-item class="column p-3" [title]="title2" [applicationItems]="processing"
+            (deleteApplicationEvent)="deleteApplicationFromList($event)">
+        </app-application-item>
+
+        <app-application-item class="column p-3" [title]="title3" [applicationItems]="accepted"
+            (deleteApplicationEvent)="deleteApplicationFromList($event)">
+        </app-application-item>
+
+        <app-application-item class="column p-3" [title]="title4" [applicationItems]="rejected"
+            (deleteApplicationEvent)="deleteApplicationFromList($event)">
+        </app-application-item>
+    </div>
+</div>

@@ -1,1 +1,21 @@
-<p>{{applicationList.length}}</p>
+<div class="statistic-container my-5 pb-1">
+    <h2 class="text-3xl font-extrabold mx-16 statistic-text">Job Application Statistic</h2>
+    <div class="count-container">
+        <div class="pending ">
+            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">Pending</span>
+            <p>{{pending.length}}</p>
+        </div>
+        <div class="processing">
+            <span class="bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">Processing</span>
+            <p> {{processing.length}}</p>
+        </div>
+        <div class="accepted">
+            <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Accepted</span>
+            <p>{{accepted.length}}</p>
+        </div>
+        <div class="rejected">
+            <span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">Rejected</span>
+            <p> {{rejected.length}}</p>
+        </div>
+    </div>
+</div>

@@ -1,22 +1,40 @@
-. {
-
+.container {
+    height: 90vh;
+    max-width: 100%;
     /* background-image: url("../../assets/image/snow-bg.jpg"); */
     position: relative;
-    text-align: center;
-    color: white;
+    margin-bottom: 20px;
+    /* text-align: center;
+    background-color: white; */
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', 'sans-serif'; */
 }
 
-img-container img {
+/* .img-container img {
     background-size: cover;
-}
+} */
 
 .text-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+   
+    max-width: 700px;
+    width: 100%;
+    height:80vh;
+
+    /* top: 50%;
+    left: 50%;  */
+    /* transform: translate(-50%, -50%); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#4C6796;
     font-family: 'Great Vibes', cursive;
     font-size: 60px;
     font-weight: 400;
+
+    position: absolute;
+    right: 0;
+    top:0;
+    left:0;
+    bottom:0;
+    margin:auto;
+
 }

@@ -1,0 +1,45 @@
+
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { faPencil } from '@fortawesome/free-solid-svg-icons';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
+import { ApiClientService } from '../api-client.service';
+
+import { Application } from '../application';
+
+@Component({
+  selector: 'app-application-item',
+  templateUrl: './application-item.component.html',
+  styleUrls: ['./application-item.component.css']
+})
+export class ApplicationItemComponent implements OnInit {
+
+  @Input() applicationItems!: Application[]
+  @Input() title!: String
+
+  @Output() deleteApplicationEvent = new EventEmitter()
+
+  faPencil = faPencil;
+  faTrashCan = faTrashCan;
+  faPaperclip = faPaperclip;
+
+
+
+  constructor(private Router: Router, private apiClient: ApiClientService) { }
+  ngOnInit(): void {
+
+  }
+
+  handleDetails(id: string) {
+    this.Router.navigate([`application/${id}`]);
+  }
+
+  handleDelete(id: string) {
+    this.apiClient.deleteApplication(id).subscribe(() => this.deleteApplicationEvent.emit(id));
+  }
+
+  handleUpdate(id: String) {
+    this.Router.navigate([`updateApplication/${id}`]);
+  }
+}

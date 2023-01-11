@@ -17,9 +17,9 @@ export class ApplicationFormComponent implements OnInit {
   //   { name: "rejected", value: 'rejected' }
   // ]
 
-
+  isSubmitted?:Boolean=false;
   applicationForm = this.formBuilder.group({
-    companyName: "",
+    companyName: ['',Validators.minLength(10)],
     location: "",
     position: "",
     jobNature: "",
@@ -36,9 +36,12 @@ export class ApplicationFormComponent implements OnInit {
   }
 
   handleSubmit() {
-    console.log(this.applicationForm);
+    this.isSubmitted=true;
+    console.log(this.applicationForm.value);
     this.apiClient.createApplication(this.applicationForm.value).subscribe();
     this.applicationForm.reset();
-    this.Router.navigate(['home']);
+    setTimeout(()=>{
+      this.Router.navigate(['home']);
+    },4000)
   }
 }

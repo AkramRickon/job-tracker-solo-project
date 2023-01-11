@@ -9,7 +9,7 @@ import { Application } from '../application';
 })
 export class HomeComponent implements OnInit {
 
-  applicationList:Application[] =[]
+  applicationList?:Application[]
 
   constructor(private apiClient: ApiClientService) { }
   ngOnInit(): void {
@@ -17,6 +17,9 @@ export class HomeComponent implements OnInit {
   }
 
   getApplications (){
-    this.apiClient.getApplications().subscribe(applications=>this.applicationList=applications);
+    this.apiClient.getApplications().subscribe(response=>{
+      this.applicationList=response;
+      console.log(this.applicationList);
+    });
   }
 }

@@ -11,6 +11,11 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JobStatusComponent } from './job-status/job-status.component';
+import { ApplicationListComponent } from './application-list/application-list.component';
+import { ApplicationItemComponent } from './application-item/application-item.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ApplicationDetailsComponent } from './application-details/application-details.component';
+import { UpdateApplicationComponent } from './update-application/update-application.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +25,19 @@ import { JobStatusComponent } from './job-status/job-status.component';
     HomeComponent,
     LoginComponent,
     HeaderComponent,
-    JobStatusComponent
+    JobStatusComponent,
+    ApplicationListComponent,
+    ApplicationItemComponent,
+    ApplicationDetailsComponent,
+    UpdateApplicationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    FontAwesomeModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
