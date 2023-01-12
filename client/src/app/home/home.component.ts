@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiClientService } from '../api-client.service';
-import { Application } from '../application';
+import { Application } from '../interfaces/Application';
 
 @Component({
   selector: 'app-home',
@@ -9,17 +9,17 @@ import { Application } from '../application';
 })
 export class HomeComponent implements OnInit {
 
-  applicationList?:Application[]
+  applicationList?: Application[]
 
   constructor(private apiClient: ApiClientService) { }
   ngOnInit(): void {
     this.getApplications();
   }
 
-  getApplications (){
-    this.apiClient.getApplications().subscribe(response=>{
-      this.applicationList=response;
-      console.log(this.applicationList);
+  getApplications() {
+    this.apiClient.getApplications().subscribe(response => {
+      this.applicationList = response;
+      // console.log(this.applicationList);
     });
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiClientService } from '../api-client.service';
-import { Application } from '../application';
+import { Application } from '../interfaces/Application';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,14 +12,14 @@ import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 })
 export class ApplicationDetailsComponent implements OnInit {
 
-  applicationDetails!: Application
+  applicationDetails?: Application
   applicationId!: String
   faPaperPlane = faPaperPlane
   faArrowLeftLong = faArrowLeftLong
 
-  constructor(private apiClient: ApiClientService, private ActivatedRoute: ActivatedRoute ,private Router:Router) { }
+  constructor(private apiClient: ApiClientService, private ActivatedRoute: ActivatedRoute, private Router: Router) { }
   ngOnInit(): void {
-    this.getApplicationDetails()
+    this.getApplicationDetails();
   }
   getApplicationDetails() {
     this.ActivatedRoute.params.forEach(params => this.applicationId = params['id']);
@@ -27,7 +27,7 @@ export class ApplicationDetailsComponent implements OnInit {
       this.applicationDetails = response;
     })
   }
-  handleGoBack(){
+  handleGoBack() {
     this.Router.navigate(['home']);
   }
 

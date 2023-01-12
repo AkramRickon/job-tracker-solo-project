@@ -4,7 +4,7 @@
         <button (click)="handleGoBack()" class="bg-purple-700 text-white px-2 rounded-sm mt-2 mb-5"><fa-icon class="mr-1" [icon]="faArrowLeftLong"></fa-icon> Go Back</button>
     </div>
     <h2 class="text-xl font-bold underline  my-2">Job Application Details</h2>
-    <div>
+    <div *ngIf="applicationDetails">
         <h2 class="text-lg my-2"><span class="font-bold">Company</span> : {{applicationDetails.companyName}}</h2>
         <h3 class="font-bold text-lg  my-2"><span>Position</span> : {{applicationDetails.position}}</h3>
         <h3 class="text-lg my-2"><span class="font-bold">Job Nature</span> : {{applicationDetails.jobNature}} </h3>

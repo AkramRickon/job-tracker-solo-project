@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Application } from '../application';
+import { Application } from '../interfaces/Application';
 
 @Component({
   selector: 'app-application-list',
@@ -46,8 +46,8 @@ export class ApplicationListComponent implements OnInit {
   }
 
   deleteApplicationFromList(id: String) {
-    const updatedList=this.applicationList.filter(application=>application._id !==id);
-    this.applicationList=updatedList;
+    const updatedList = this.applicationList.filter(application => application._id !== id);
+    this.applicationList = updatedList;
     this.filterApplication();
   }
 }

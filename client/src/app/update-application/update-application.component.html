@@ -1,6 +1,6 @@
 <div class="mt-12 mb-20 ">
 
-    <form [formGroup]="applicationForm" (ngSubmit)="handleSubmit()"
+    <form [formGroup]="applicationForm" (ngSubmit)="handleUpdate()"
         class="flex flex-col justify-center w-2/5 m-auto gap-2 p-3 shadow-lg">
         <h2 class="text-xl font-semibold mb-2">Update Application Details</h2>
         <div>
@@ -8,7 +8,7 @@
             <!-- <input type="text" id="cName" formControlName="companyName" class="border-b-2 border-slate-500"> -->
 
             <input type="text" id="cName" formControlName="companyName"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="company name" required>
         </div>
 
@@ -16,7 +16,7 @@
             <!-- <label for="position" class="">Position</label> -->
             <!-- <input type="text" id="position" formControlName="position" class=" border-b-2 border-slate-500">  -->
             <input type="text" id="position" formControlName="position"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="position" required>
         </div>
 
@@ -24,7 +24,7 @@
             <!-- <label for="location" class="">Location</label> -->
             <!-- <input type="text" id="location" formControlName="location" class="border-b-2 border-slate-500"> -->
             <input type="text" id="location" formControlName="location"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="job location" required>
 
         </div>
@@ -34,7 +34,7 @@
             <!-- <input type="text" id="jobNature" formControlName="jobNature" class="border-b-2 border-slate-500"> 
             -->
             <input type="text" id="jobNature" formControlName="jobNature"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Job Nature" required>
         </div>
 
@@ -42,7 +42,7 @@
             <!-- <label for="employmentType" class="">Employment Type</label> -->
             <!-- <input type="text" id="employmentType" formControlName="employmentType" class="border-b-2 border-slate-500"> -->
             <input type="text" id="employmentType" formControlName="employmentType"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Employment Type" required>
 
         </div>
@@ -51,15 +51,15 @@
             <!-- <label for="details" class="">Details</label> -->
             <!-- <input type="text" id="details" formControlName="details" class="border-b-2 border-slate-500"> -->
             <textarea id="details" rows="2" formControlName="details"
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class=" form-control block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Job Details ...."></textarea>
         </div>
 
         <div>
             <!-- <label for="salary" class="">Salary</label> -->
             <!-- <input type="text" id="salary" formControlName="salary" class="border-b-2 border-slate-500"> -->
-            <input type="text" id="salary" formControlName="salary"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            <input type="number" id="salary" formControlName="salary"
+                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Salary" required>
         </div>
 
@@ -67,7 +67,7 @@
             <label for="interviewDate" class=""><small>Interview Date</small></label>
             <!-- <input type="date" id="interviewDate" formControlName="interviewDate" class="border-b-2 border-slate-500">        -->
             <input type="date" id="interviewDate" formControlName="interviewDate"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Interview Date" required>
         </div>
 
@@ -75,7 +75,7 @@
             <!-- <label for="jobLink" class="">Job Link</label> -->
             <!-- <input type="text" id="jobLink" formControlName="jobLink" class="border-b-2 border-slate-500"> -->
             <input type="text" id="jobLink" formControlName="jobLink"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Job Link" required>
         </div>
 
@@ -88,15 +88,28 @@
                 <option value="rejected">Rejected</option>
                 <option value="accepted">Accepted</option>
             </select> -->
-            <!-- <label for="small" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label> -->
+            <!-- <label for="small" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
             <select id="small" formControlName="status"
-                class="block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                class="form-control block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option selected disabled>Select Status</option>
                 <option value="pending">Pending</option>
                 <option value="processing">Processing</option>
                 <option value="accepted">Accepted</option>
                 <option value="rejected">Rejected</option>
+            </select> -->
+
+
+            <label for="status" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an
+                option</label>
+            <select id="status" formControlName="status"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected disabled>Choose a country</option>
+                <option value="pending">Pending</option>
+                <option value="accepted">Accepted</option>
+                <option value="processing">Processing</option>
+                <option value="rejected">Rejected</option>
             </select>
+
         </div>
         <div>
             <!-- <button type="submit" [disabled]="applicationForm.invalid" class=" text-white bg-blue-600 px-3 py-2 rounded-full">Submit</button> -->
@@ -104,7 +117,7 @@
             <!-- <button type="submit" [disabled]="!applicationForm.valid"
                 class="text-white bg-blue-600 px-3 py-2 rounded-full">Save Changes</button> -->
             <button type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
         </div>
         <div *ngIf="isSubmitted"
             class="flex p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-gray-800 dark:text-green-400"

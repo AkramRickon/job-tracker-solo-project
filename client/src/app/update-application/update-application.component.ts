@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiClientService } from '../api-client.service';
-import { Application } from '../application';
+import { Application } from '../interfaces/Application';
 
 @Component({
   selector: 'app-update-application',
@@ -17,20 +17,31 @@ export class UpdateApplicationComponent implements OnInit {
 
 
   isSubmitted?: Boolean = false;
+  // UpdateApplicationForm = new FormGroup({
+  //   companyName: new FormControl(''),
+  //   location:new FormControl(''),
+  //   position:new FormControl(''),
+  //   jobNature: new FormControl(''),
+  //   employmentType: new FormControl(''),
+  //   details: new FormControl(''),
+  //   salary: new FormControl(''),
+  //   interviewDate: new FormControl(''),
+  //   status: new FormControl(''),
+  //   jobLink: new FormControl('')
+  // })
+
   applicationForm = this.formBuilder.group({
-    companyName: this.applicationDetails?.companyName,
-    location:this.applicationDetails.location,
-    position:this.applicationDetails.position,
-    jobNature: this.applicationDetails.jobNature,
-    employmentType: this.applicationDetails.employmentType,
-    details: this.applicationDetails.details,
-    salary: this.applicationDetails.salary,
-    interviewDate: this.applicationDetails.interviewDate,
-    status: this.applicationDetails.status,
-    jobLink: this.applicationDetails.jobLink
+    companyName: [''],
+    location: '',
+    position: '',
+    jobNature: '',
+    employmentType: '',
+    details: '',
+    salary: '',
+    interviewDate: '',
+    status: '',
+    jobLink: ''
   })
-
-
 
   constructor(private apiClient: ApiClientService, private ActivatedRoute: ActivatedRoute, private Router: Router, private formBuilder: FormBuilder) { }
   ngOnInit(): void {
@@ -39,17 +50,28 @@ export class UpdateApplicationComponent implements OnInit {
 
   getApplicationDetails() {
     this.ActivatedRoute.params.forEach(params => this.applicationId = params['id']);
+
+
     this.apiClient.getApplicationById(this.applicationId).subscribe(response => {
-      this.applicationDetails = response;
+      console.log(response);
+      this.applicationForm.controls['companyName'].setValue(response.companyName);
+      this.applicationForm.controls['position'].setValue(response.position);
+      this.applicationForm.controls['location'].setValue(response.location);
+      this.applicationForm.controls['jobNature'].setValue(response.jobNature);
+      this.applicationForm.controls['employmentType'].setValue(response.employmentType);
+      this.applicationForm.controls['details'].setValue(response.details);
+      this.applicationForm.controls['jobLink'].setValue(response.jobLink);
+      this.applicationForm.controls['status'].setValue(response.status);
+      this.applicationForm.controls['salary'].setValue(response.salary.toString());
     })
   }
-  handleSubmit() {
+  handleUpdate() {
     this.isSubmitted = true;
-    console.log(this.applicationForm.value);
-    // this.apiClient.updateApplication(this.applicationForm.value,this.applicationId).subscribe();
+    console.log(this.applicationForm.setValue);
+    this.apiClient.updateApplication(this.applicationForm.value, this.applicationId).subscribe();
     this.applicationForm.reset();
     setTimeout(() => {
       this.Router.navigate(['home']);
-    }, 4000)
+    }, 3000)
   }
 }

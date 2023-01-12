@@ -6,7 +6,7 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import { ApiClientService } from '../api-client.service';
 
-import { Application } from '../application';
+import { Application } from '../interfaces/Application';
 
 @Component({
   selector: 'app-application-item',
@@ -31,11 +31,11 @@ export class ApplicationItemComponent implements OnInit {
 
   }
 
-  handleDetails(id: string) {
+  handleDetails(id: String) {
     this.Router.navigate([`application/${id}`]);
   }
 
-  handleDelete(id: string) {
+  handleDelete(id: String) {
     this.apiClient.deleteApplication(id).subscribe(() => this.deleteApplicationEvent.emit(id));
   }
 

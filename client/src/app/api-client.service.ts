@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Application } from './application';
+import { Application } from './interfaces/Application';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -24,11 +24,11 @@ export class ApiClientService {
     return this.http.post<Application>(this.rootUrl, application);
   }
 
-  deleteApplication(id: String) : Observable<Application> {
+  deleteApplication(id: String): Observable<Application> {
     return this.http.delete<Application>(`${this.rootUrl}/${id}`);
   }
 
-  updateApplication (application:any ,id:String) : Observable<Application> {
+  updateApplication(application: any, id: String): Observable<Application> {
     return this.http.put<Application>(`${this.rootUrl}/${id}`, application);
   }
 }

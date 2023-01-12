@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiClientService } from '../api-client.service';
-import { Application } from '../application';
+import { Application } from '../interfaces/Application';
 
 @Component({
   selector: 'app-application-form',
@@ -17,9 +17,9 @@ export class ApplicationFormComponent implements OnInit {
   //   { name: "rejected", value: 'rejected' }
   // ]
 
-  isSubmitted?:Boolean=false;
+  isSubmitted?: Boolean = false;
   applicationForm = this.formBuilder.group({
-    companyName: ['',Validators.minLength(10)],
+    companyName: ['', Validators.minLength(10)],
     location: "",
     position: "",
     jobNature: "",
@@ -36,12 +36,12 @@ export class ApplicationFormComponent implements OnInit {
   }
 
   handleSubmit() {
-    this.isSubmitted=true;
+    this.isSubmitted = true;
     console.log(this.applicationForm.value);
     this.apiClient.createApplication(this.applicationForm.value).subscribe();
     this.applicationForm.reset();
-    setTimeout(()=>{
+    setTimeout(() => {
       this.Router.navigate(['home']);
-    },4000)
+    }, 4000)
   }
 }
