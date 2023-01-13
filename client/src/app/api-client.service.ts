@@ -13,6 +13,13 @@ export class ApiClientService {
   constructor(private http: HttpClient) { }
 
   getApplications(): Observable<Application[]> {
+
+    const httpOptions = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
     return this.http.get<Application[]>(this.rootUrl);
   }
 

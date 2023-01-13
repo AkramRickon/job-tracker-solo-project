@@ -27,5 +27,4 @@ export class RegisterComponent implements OnInit {
       this.Router.navigate(['/login']);
     }
   }
-
 }

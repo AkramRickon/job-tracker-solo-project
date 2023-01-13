@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,6 +18,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ApplicationDetailsComponent } from './application-details/application-details.component';
 import { UpdateApplicationComponent } from './update-application/update-application.component';
 import { RegisterComponent } from './register/register.component';
+import { JobApplicationStatisticsComponent } from './job-application-statistics/job-application-statistics.component';
 
 @NgModule({
   declarations: [
@@ -31,15 +33,15 @@ import { RegisterComponent } from './register/register.component';
     ApplicationItemComponent,
     ApplicationDetailsComponent,
     UpdateApplicationComponent,
-    RegisterComponent
+    RegisterComponent,
+    JobApplicationStatisticsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FontAwesomeModule
-
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

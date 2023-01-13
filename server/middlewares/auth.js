@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/users');
 
 const authMiddleware = async (req, res, next) => {
+    
     const { authorization } = req.headers;
     if (!authorization) {
         res.sendStatus(403);

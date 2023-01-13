@@ -37,6 +37,7 @@ const getUser = async (req, res) => {
         if (user) {
             const isValidPassword = await bcrypt.compare(password, user.password);
             if (isValidPassword) {
+               
                 
                 // Generate JWT token
                 const token = jwt.sign(
@@ -47,14 +48,15 @@ const getUser = async (req, res) => {
                     });
 
                 res.status(200);
-                res.header({
-                    "access_token": 'Bearer ' + token,
-                });
+                // res.header({
+                //     "access_token": 'Bearer ' + token,
+                // });
                 res.json({
                     "success":true,
+                    "access_token":token,
+                    "expiresIn":"7d",
                     "id": user._id,
                     "message": "Login Successful",
-                    
                 })
             }
             else {
