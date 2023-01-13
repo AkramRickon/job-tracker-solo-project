@@ -19,6 +19,7 @@ import { ApplicationDetailsComponent } from './application-details/application-d
 import { UpdateApplicationComponent } from './update-application/update-application.component';
 import { RegisterComponent } from './register/register.component';
 import { JobApplicationStatisticsComponent } from './job-application-statistics/job-application-statistics.component';
+import { JobStatisticsCardComponent } from './job-statistics-card/job-statistics-card.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { JobApplicationStatisticsComponent } from './job-application-statistics/
     ApplicationDetailsComponent,
     UpdateApplicationComponent,
     RegisterComponent,
-    JobApplicationStatisticsComponent
+    JobApplicationStatisticsComponent,
+    JobStatisticsCardComponent,
+    
   ],
   imports: [
     BrowserModule,

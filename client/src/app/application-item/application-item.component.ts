@@ -24,8 +24,6 @@ export class ApplicationItemComponent implements OnInit {
   faTrashCan = faTrashCan;
   faPaperclip = faPaperclip;
 
-
-
   constructor(private Router: Router, private apiClient: ApiClientService) { }
   ngOnInit(): void {
 

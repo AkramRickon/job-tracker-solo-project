@@ -1,13 +1,14 @@
-<div class="border p-2 ">
+<div class="border  p-3 height bg-gray-50  overflow-y-scroll">
     <span class="text-xl font-bold my-2"> {{title}}</span>
 
 
-    <div class="border my-2 p-2 rounded shadow-md" *ngFor="let application of applicationItems">
+    <div class="border my-4 p-2 rounded bg-white shadow-md" *ngFor="let application of applicationItems">
         <div class="flex justify-between">
-            <span class="text-lg font-bold ">{{application.companyName}}</span>
+            <span class="text-lg font-bold" [ngClass]="{pending:title==='Pending' , processing:title==='Processing' , accepted:title==='Accepted',rejected:title==='Rejected'}" >{{application.companyName}}</span>
             <span class="">
                 <button (click)="handleUpdate(application._id)">
-                    <fa-icon class="m-2 text-slate-700" [icon]="faPencil"></fa-icon>
+                    
+                    <fa-icon class="mr-5 text-slate-700" [icon]="faPencil"></fa-icon>
                 </button>
                 <button (click)="handleDelete(application._id)">
                     <fa-icon class="text-red-500" [icon]="faTrashCan"></fa-icon>

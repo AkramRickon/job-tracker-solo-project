@@ -6,8 +6,11 @@
 
 * {
     font-family: Cursive;
+    
 }
-
+::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
 /* *{
     font-family: 'Great Vibes', cursive;
 } */

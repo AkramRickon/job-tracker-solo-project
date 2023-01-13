@@ -1,1 +1,26 @@
-<p>job-application-statistics works!</p>
+<div class="container ml-20 my-20">
+    <div class="allJobContainer min-h-80">
+        <div class="text-center shadow border text-lg ">
+            <div class="my-2">
+                <h3 class="text-center font-bold text-lg">Total Job Applied</h3>
+                <h2 class="font-extrabold text-xl">{{applicationList.length}}</h2>
+                <p class="font-bold">Apply More Jobs</p>
+            </div>
+            <!-- <fa-icon [icon]="faFileLines"></fa-icon> -->
+            <div>
+                <button class="w-full bg-green-600 "> <fa-icon class="text-white"
+                        [icon]="faPlus"></fa-icon></button>
+            </div>
+        </div>
+        <div class="statisticContainer">
+            <app-job-statistics-card [title]="title1" [statistics]="pending"></app-job-statistics-card>
+             <app-job-statistics-card [title]="title2" [statistics]="processing"></app-job-statistics-card>
+            <app-job-statistics-card [title]="title3" [statistics]="accepted"></app-job-statistics-card>
+             <app-job-statistics-card [title]="title4" [statistics]="rejected"></app-job-statistics-card>
+        </div>
+    </div>
+
+    <div class="shadow font-semibold text-center border">
+        Upcoming Interview
+    </div>
+</div>
