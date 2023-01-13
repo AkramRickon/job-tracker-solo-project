@@ -1,5 +1,5 @@
 
-const {mongoose} = require('../db');
+const { mongoose } = require('../db');
 
 const applicationSchema = mongoose.Schema({
     companyName: {
@@ -49,4 +49,4 @@ const applicationSchema = mongoose.Schema({
 
 const Application = mongoose.model('Application', applicationSchema);
 
-module.exports=Application;
+module.exports = Application;

@@ -42,6 +42,6 @@ export class ApplicationFormComponent implements OnInit {
     this.applicationForm.reset();
     setTimeout(() => {
       this.Router.navigate(['home']);
-    }, 4000)
+    },2000)
   }
 }

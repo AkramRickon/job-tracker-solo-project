@@ -15,8 +15,8 @@ export class AuthService {
     return this.httpClient.post<User>(`${this.authUrl}/signup`, user);
   }
 
-  proceedLogin (loginData:any) {
-    return this.httpClient.post(`${this.authUrl}/signin`,loginData)
+  proceedLogin(loginData: any) {
+    return this.httpClient.post(`${this.authUrl}/signin`, loginData)
   }
 
 }

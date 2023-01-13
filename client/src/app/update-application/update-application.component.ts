@@ -72,6 +72,6 @@ export class UpdateApplicationComponent implements OnInit {
     this.applicationForm.reset();
     setTimeout(() => {
       this.Router.navigate(['home']);
-    }, 3000)
+    }, 2000)
   }
 }

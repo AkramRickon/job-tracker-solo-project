@@ -16,6 +16,7 @@ import { ApplicationItemComponent } from './application-item/application-item.co
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ApplicationDetailsComponent } from './application-details/application-details.component';
 import { UpdateApplicationComponent } from './update-application/update-application.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UpdateApplicationComponent } from './update-application/update-applicat
     ApplicationListComponent,
     ApplicationItemComponent,
     ApplicationDetailsComponent,
-    UpdateApplicationComponent
+    UpdateApplicationComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
