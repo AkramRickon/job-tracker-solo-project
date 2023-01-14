@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { faPencil } from '@fortawesome/free-solid-svg-icons';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
+import { faDollar  } from '@fortawesome/free-solid-svg-icons';
+import { faPenToSquare  } from '@fortawesome/free-solid-svg-icons';
 import { ApiClientService } from '../api-client.service';
 
 import { Application } from '../interfaces/Application';
@@ -23,6 +25,8 @@ export class ApplicationItemComponent implements OnInit {
   faPencil = faPencil;
   faTrashCan = faTrashCan;
   faPaperclip = faPaperclip;
+  faDollar=faDollar;
+  faPenToSquare=faPenToSquare;
 
   constructor(private Router: Router, private apiClient: ApiClientService) { }
   ngOnInit(): void {
