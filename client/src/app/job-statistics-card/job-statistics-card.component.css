@@ -1,21 +1,44 @@
-
-.pending{
-    color: orange;
-    background-color: antiquewhite;
-    padding:1px 5px;
-}
-.processing{
-    color: black;
-    background-color: #AC94FA;
-    padding:1px 5px;
-}
-.accepted{
-    color: black;
-    background-color: aquamarine;
-    padding:1px 5px;
-}
-.rejected{
+.pending {
     color: white;
-    background-color: rgb(255, 135, 135);
-    padding:1px 5px;
+    background-color: #FF8800;
+    padding: 1px 5px;
+}
+
+.processing {
+    color: white;
+    background-color: #4F46E5;
+    padding: 1px 5px;
+}
+
+.accepted {
+    color: white;
+    background-color: #10B981;
+    padding: 1px 5px;
+}
+
+.rejected {
+    color: white;
+    background-color: #f83707;
+    padding: 1px 5px;
+}
+
+
+.pendingNumber {
+    color: #FF8800;
+    padding: 1px 5px;
+}
+
+.processingNumber {
+    color: #4F46E5;
+    padding: 1px 5px;
+}
+
+.acceptedNumber {
+    color: #10B981;
+    padding: 1px 5px;
+}
+
+.rejectedNumber {
+    color: #f83707;
+    padding: 1px 5px;
 }

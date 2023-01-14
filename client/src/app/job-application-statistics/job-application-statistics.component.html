@@ -42,10 +42,12 @@
     
 </div> -->
 
-<div class="stat-board  flex mx-20 mt-2">
-    <div class="left bg-sky-400 w-1/5 flex flex-col justify-center items-center mx-1">
-        <h2 class=" justify-center font-extrabold text-5xl mb-4">{{applicationList.length}}</h2>
-        <h3 class="text-center font-bold text-xl">Total Job Applied</h3>
+<div class="stat-board  flex mx-20 my-5">
+    <div class="left bg-purple-700 w-1/5 flex flex-col justify-center items-center mx-1">
+        <h2 class=" justify-center font-extrabold text-5xl mb-4 text-white">{{applicationList.length}}</h2>
+        <h3 class="text-center font-bold text-xl text-white">
+            <fa-icon class="mr-3"  [icon]="faListCheck"></fa-icon>
+            Total Job Applied</h3>
         
 
     </div>
@@ -63,7 +65,7 @@
 
     </div>
     <div class="right w-1/5 bg-white">
-        <h2 class="p-2 text-center">Upcoming Interview</h2>
+        <h2 class="p-2 text-center bg-purple-700 text-white">Upcoming Interview</h2>
         <hr/>
         <div *ngFor="let application of upComingInterview">
             <div class="text-center m-2 shadow border flex justify-center ">

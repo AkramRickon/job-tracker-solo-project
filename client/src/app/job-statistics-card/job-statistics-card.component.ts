@@ -1,4 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { faUserXmark } from '@fortawesome/free-solid-svg-icons';
+import { faUserCheck } from '@fortawesome/free-solid-svg-icons';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faBarsProgress } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-job-statistics-card',
@@ -8,6 +13,10 @@ import { Component, Input } from '@angular/core';
 export class JobStatisticsCardComponent {
   @Input() statistics?: number
   @Input() title?: String
-  
+
+  faUserXmark=faUserXmark;
+  faUserCheck=faUserCheck;
+  faSpinner=faSpinner;
+  faBarsProgress=faBarsProgress;
 
 }

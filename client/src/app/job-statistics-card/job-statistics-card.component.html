@@ -1,7 +1,17 @@
-<div class="text-center flex text-lg h-[48%] mx-1 mb-1 border shadow"
-  >
-    <div class="flex justify-center items-center w-20 text-4xl bg-white" >{{statistics}}</div>
-    <div class="flex justify-center items-center w-full "   [ngClass]="{pending:title==='Pending' , processing:title==='Processing' , accepted:title==='Accepted',rejected:title==='Rejected'}">{{title}}</div>
-    
-   
+<div class="text-center flex text-lg h-[48%] mx-1 mb-1 border shadow">
+    <div class="flex justify-center items-center w-20 text-4xl bg-white"
+        [ngClass]="{pendingNumber:title==='Pending' , processingNumber:title==='Processing' , acceptedNumber:title==='Accepted',rejectedNumber:title==='Rejected'}">
+        {{statistics}}</div>
+
+    <div class="flex justify-center items-center w-full font-semibold text-xl"
+        [ngClass]="{pending:title==='Pending' , processing:title==='Processing' , accepted:title==='Accepted',rejected:title==='Rejected'}">
+        <fa-icon class="mr-3" *ngIf="title==='Rejected'" [icon]="faUserXmark"></fa-icon>
+        <fa-icon class="mr-3" *ngIf="title==='Accepted'" [icon]="faUserCheck"></fa-icon>
+        <fa-icon class="mr-3" *ngIf="title==='Processing'" [icon]="faSpinner"></fa-icon>
+        <fa-icon class="mr-3" *ngIf="title==='Pending'" [icon]="faBarsProgress"></fa-icon>
+        
+        {{title}}
+    </div>
+
+
 </div>
