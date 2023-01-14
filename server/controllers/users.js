@@ -1,4 +1,5 @@
 const User = require('../models/users');
+const Application=require('../models/application');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -13,7 +14,7 @@ const createUser = async (req, res) => {
         let { fullName, email, password, phoneNumber } = req.body;
         password = await bcrypt.hash(password, 10);
 
-        if ( fullName && email && password && phoneNumber) {
+        if (fullName && email && password && phoneNumber) {
             const result = await User.create({ fullName, email, password, phoneNumber });
             res.status(200);
             res.send(result);
@@ -34,11 +35,14 @@ const getUser = async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await User.findOne({ email: email });
+        // console.log(user);
         if (user) {
             const isValidPassword = await bcrypt.compare(password, user.password);
+            const result = await Application.find({ user: user.email });
+            
             if (isValidPassword) {
-               
-                
+
+
                 // Generate JWT token
                 const token = jwt.sign(
                     { _id: user._id },
@@ -48,14 +52,13 @@ const getUser = async (req, res) => {
                     });
 
                 res.status(200);
-                // res.header({
-                //     "access_token": 'Bearer ' + token,
-                // });
+                // res.setHeader("Authorization", 'Bearer ' + token);
                 res.json({
-                    "success":true,
-                    "access_token":token,
-                    "expiresIn":"7d",
-                    "id": user._id,
+                    "success": true,
+                    "access_token": 'Bearer ' + token,
+                    "expiresIn": "7d",
+                    "email": user.email,
+                    "data" : result,
                     "message": "Login Successful",
                 })
             }

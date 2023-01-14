@@ -28,12 +28,13 @@ const getApplicationById = async (req, res) => {
 
 const createApplication = async (req, res) => {
     try {
-        const { companyName, position, salary, location, jobNature, employmentType, details, status, jobLink } = req.body;
+    
+        const { companyName, position, salary, location, jobNature, employmentType, details, status, jobLink,user } = req.body;
 
         //checking if all the required data are sent from client side
-        if (companyName && position && salary && location && jobNature && employmentType && details && status && jobLink) {
+        if (companyName && position && salary && location && jobNature && employmentType && details && status && jobLink , user) {
 
-            const result = await Application.create({ companyName, position, salary, location, jobNature, employmentType, details, status, jobLink });
+            const result = await Application.create({ companyName, position, salary, location, jobNature, employmentType, details, status, jobLink ,user});
             res.send(result);
             res.status(201);
         }

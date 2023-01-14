@@ -8,7 +8,8 @@ const PORT = process.env.SERVER_PORT || 3000;
 
 const corsConfig = {
     origin: 'http://localhost:4200',
-    credentials: true
+    credentials: true,
+    exposedHeaders: ['Authorization']
 }
 
 dotenv.config();

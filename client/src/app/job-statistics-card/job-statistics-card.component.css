@@ -1,21 +1,21 @@
 
 .pending{
     color: orange;
+    background-color: antiquewhite;
     padding:1px 5px;
-    border-radius: 30px;
 }
 .processing{
-    color: rgb(2, 247, 153);
+    color: black;
+    background-color: #AC94FA;
     padding:1px 5px;
-    border-radius: 30px;
 }
 .accepted{
-    color: rgb(21, 255, 0);
+    color: black;
+    background-color: aquamarine;
     padding:1px 5px;
-    border-radius: 30px;
 }
 .rejected{
-    color: rgb(255, 51, 0);
+    color: white;
+    background-color: rgb(255, 135, 135);
     padding:1px 5px;
-    border-radius: 30px;
 }

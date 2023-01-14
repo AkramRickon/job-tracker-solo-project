@@ -3,9 +3,9 @@ const applicationController = require('./controllers/application');
 const userController = require('./controllers/users');
 const { authMiddleware } = require('./middlewares/auth');
 
-router.get('/application', applicationController.getApplications);
+router.get('/application', authMiddleware, applicationController.getApplications);
 
-router.get('/application/:id', applicationController.getApplicationById);
+router.get('/application/:id',authMiddleware, applicationController.getApplicationById);
 
 router.post('/application', applicationController.createApplication);
 

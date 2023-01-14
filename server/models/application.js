@@ -44,6 +44,10 @@ const applicationSchema = mongoose.Schema({
     jobLink: {
         type: String,
         required: true
+    },
+    user: {
+        type: String,
+        required: true
     }
 })
 

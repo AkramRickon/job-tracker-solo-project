@@ -11,4 +11,5 @@ export interface Application {
     interviewDate?: Date
     status: string
     jobLink: string
+    user : string
 }

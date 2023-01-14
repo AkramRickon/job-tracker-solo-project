@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Application } from './interfaces/Application';
 import { Observable } from 'rxjs';
+import { AuthService } from './services/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,33 +10,60 @@ import { Observable } from 'rxjs';
 export class ApiClientService {
 
   rootUrl = "http://localhost:3000/application"
+  token = this.authService.getToken();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
   getApplications(): Observable<Application[]> {
-
     const httpOptions = {
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `${this.token}`
+      }
+    };
+    return this.http.get<Application[]>(this.rootUrl, httpOptions);
+  }
+
+
+  getApplicationById(id: String): Observable<Application> {
+    const httpOptions = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `${this.token}`
       }
     };
 
-    return this.http.get<Application[]>(this.rootUrl);
+    return this.http.get<Application>(`${this.rootUrl}/${id}`, httpOptions);
   }
-
-  getApplicationById(id: String): Observable<Application> {
-    return this.http.get<Application>(`${this.rootUrl}/${id}`);
-  }
-
-  createApplication(application: any): Observable<Application> {
-    return this.http.post<Application>(this.rootUrl, application);
+  
+  createApplication(application: any) {
+    console.log(application);
+    const httpOptions = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `${this.token}`
+      }
+    };
+    return this.http.post<Application>(this.rootUrl, application, httpOptions);
   }
 
   deleteApplication(id: String): Observable<Application> {
-    return this.http.delete<Application>(`${this.rootUrl}/${id}`);
+    const httpOptions = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `${this.token}`
+      }
+    };
+    return this.http.delete<Application>(`${this.rootUrl}/${id}`,httpOptions);
   }
 
   updateApplication(application: any, id: String): Observable<Application> {
-    return this.http.put<Application>(`${this.rootUrl}/${id}`, application);
+    const httpOptions = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `${this.token}`
+      }
+    };
+    return this.http.put<Application>(`${this.rootUrl}/${id}`, application, httpOptions);
   }
 }
