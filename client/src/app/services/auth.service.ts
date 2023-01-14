@@ -32,4 +32,8 @@ export class AuthService {
     return localStorage.getItem('user');
   }
 
+  getResponse(){
+    return localStorage.getItem('response');
+  }
+
 }

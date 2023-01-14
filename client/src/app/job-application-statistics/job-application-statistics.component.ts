@@ -2,6 +2,9 @@ import { Application } from './../interfaces/Application';
 import { Component, OnInit, Input } from '@angular/core';
 import { faFileLines } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-regular-svg-icons';
+
+
 
 @Component({
   selector: 'app-job-application-statistics',
@@ -15,6 +18,7 @@ export class JobApplicationStatisticsComponent implements OnInit {
   accepted!: number
   processing!: number
   rejected!: number
+  upComingInterview!: Application[]
 
   title1!: String
   title2!: String
@@ -24,6 +28,7 @@ export class JobApplicationStatisticsComponent implements OnInit {
 
   faFileLines = faFileLines;
   faPlus = faPlus;
+  faClock = faClock;
 
   constructor() { }
   ngOnInit(): void {
@@ -44,6 +49,8 @@ export class JobApplicationStatisticsComponent implements OnInit {
     this.pending = this.applicationList.filter(application => application.status === 'pending').length;
     this.rejected = this.applicationList.filter(application => application.status === 'rejected').length;
     this.processing = this.applicationList.filter(application => application.status === 'processing').length;
+    this.upComingInterview = this.applicationList.filter(application => application.status === 'processing')
+    this.upComingInterview = this.upComingInterview.sort((a, b) => new Date(a.interviewDate).getTime() - new Date(b.interviewDate).getTime());
   }
 
 }

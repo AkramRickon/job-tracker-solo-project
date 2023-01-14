@@ -3,6 +3,7 @@ import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiClientService } from '../api-client.service';
 import { Application } from '../interfaces/Application';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-update-application',
@@ -13,10 +14,8 @@ export class UpdateApplicationComponent implements OnInit {
 
   applicationDetails!: Application;
   applicationId!: String;
-
-
-
   isSubmitted?: Boolean = false;
+  user: String | null = '';
   // UpdateApplicationForm = new FormGroup({
   //   companyName: new FormControl(''),
   //   location:new FormControl(''),
@@ -43,14 +42,19 @@ export class UpdateApplicationComponent implements OnInit {
     jobLink: ''
   })
 
-  constructor(private apiClient: ApiClientService, private ActivatedRoute: ActivatedRoute, private Router: Router, private formBuilder: FormBuilder) { }
+  constructor(private apiClient: ApiClientService,
+    private ActivatedRoute: ActivatedRoute,
+    private Router: Router,
+    private formBuilder: FormBuilder,
+    private authService: AuthService) { }
   ngOnInit(): void {
+
     this.getApplicationDetails();
+    this.user = this.authService.getUser();
   }
 
   getApplicationDetails() {
     this.ActivatedRoute.params.forEach(params => this.applicationId = params['id']);
-
 
     this.apiClient.getApplicationById(this.applicationId).subscribe(response => {
       console.log(response);
@@ -68,7 +72,7 @@ export class UpdateApplicationComponent implements OnInit {
   handleUpdate() {
     this.isSubmitted = true;
     console.log(this.applicationForm.setValue);
-    this.apiClient.updateApplication(this.applicationForm.value, this.applicationId).subscribe();
+    this.apiClient.updateApplication({...this.applicationForm.value,user:this.user}, this.applicationId).subscribe(res => console.log(res));
     this.applicationForm.reset();
     setTimeout(() => {
       this.Router.navigate(['home']);

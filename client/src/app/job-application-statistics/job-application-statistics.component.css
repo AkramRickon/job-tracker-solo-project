@@ -3,17 +3,21 @@
     display:grid;
     grid-template-columns: 9fr 3fr;
     grid-gap: 20px;
+    height:17vh;
+    background-color: pink;
 }
 
 .allJobContainer{
     display:grid;
     grid-template-columns: 4fr 8fr;
     grid-gap: 20px;
+    height: 100%;
+   
 }
 
 .statisticContainer {
     display:grid;
     grid-template-columns: 6fr 6fr;
     grid-gap: 10px;
-    
+    height: 100%;
 }

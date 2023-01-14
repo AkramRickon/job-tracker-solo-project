@@ -5,13 +5,15 @@ const { authMiddleware } = require('./middlewares/auth');
 
 router.get('/application', authMiddleware, applicationController.getApplications);
 
-router.get('/application/:id',authMiddleware, applicationController.getApplicationById);
+router.get('/application/:id', authMiddleware, applicationController.getApplicationById);
 
-router.post('/application', applicationController.createApplication);
+router.post('/application',authMiddleware, applicationController.createApplication);
 
-router.delete('/application/:id', applicationController.deleteApplication);
+router.post('/application/user', authMiddleware, applicationController.getUserApplication);
 
-router.put('/application/:id', applicationController.updateApplication);
+router.delete('/application/:id',authMiddleware, applicationController.deleteApplication);
+
+router.put('/application/:id',authMiddleware, applicationController.updateApplication);
 
 router.post('/signin', userController.getUser);
 

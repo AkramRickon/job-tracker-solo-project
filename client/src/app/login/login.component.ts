@@ -33,9 +33,10 @@ export class LoginComponent implements OnInit {
       this.authService.proceedLogin(this.loginForm.value).subscribe(response => {
         if (response !== null) {
           this.responseData = response;
-          console.log(response)
+          // console.log(response);
           localStorage.setItem('token', this.responseData.access_token);
           localStorage.setItem('user',this.responseData.email);
+  
           this.isSubmitted = true;
           setTimeout(() => {
             this.Router.navigate(['/home']);

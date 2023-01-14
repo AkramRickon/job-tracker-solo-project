@@ -26,15 +26,30 @@ const getApplicationById = async (req, res) => {
     }
 }
 
+const getUserApplication = async (req, res) => {
+    try {
+        const { email } = req.body;
+        // console.log(email);
+        const result = await Application.find({ user: email });
+        res.send(result);
+        res.status(200);
+    }
+    catch (error) {
+        console.log(error);
+        res.status(500);
+        res.send(error);
+    }
+}
+
 const createApplication = async (req, res) => {
     try {
-    
-        const { companyName, position, salary, location, jobNature, employmentType, details, status, jobLink,user } = req.body;
+
+        const { companyName, position, salary, location, jobNature, employmentType, details, status, jobLink, user } = req.body;
 
         //checking if all the required data are sent from client side
-        if (companyName && position && salary && location && jobNature && employmentType && details && status && jobLink , user) {
+        if (companyName && position && salary && location && jobNature && employmentType && details && status && jobLink, user) {
 
-            const result = await Application.create({ companyName, position, salary, location, jobNature, employmentType, details, status, jobLink ,user});
+            const result = await Application.create({ companyName, position, salary, location, jobNature, employmentType, details, status, jobLink, user });
             res.send(result);
             res.status(201);
         }
@@ -79,4 +94,4 @@ const updateApplication = async (req, res) => {
     }
 }
 
-module.exports = { getApplications, createApplication, deleteApplication, updateApplication,getApplicationById };
+module.exports = { getApplications, createApplication, deleteApplication, updateApplication, getApplicationById, getUserApplication };

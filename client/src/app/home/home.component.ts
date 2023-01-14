@@ -17,13 +17,15 @@ export class HomeComponent implements OnInit {
   constructor(private apiClient: ApiClientService,
     private authService: AuthService) { }
   ngOnInit(): void {
-    this.getApplications();
     this.user = this.authService.getUser();
+    this.getApplications();
+
   }
 
   getApplications() {
-    this.apiClient.getApplications().subscribe(response => {
-      this.applicationList = response.filter(application=> application.user===this.user);
+    this.apiClient.getUserApplication(this.user).subscribe(response => {
+      console.log(response);
+      this.applicationList = response;
       // console.log(this.applicationList);
     });
   }

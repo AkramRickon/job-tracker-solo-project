@@ -2,7 +2,7 @@
     <span class="text-xl font-bold my-2"> {{title}}</span>
 
 
-    <div class="border my-4 p-2 rounded bg-white shadow-md" *ngFor="let application of applicationItems">
+    <div class="border my-4 p-2 rounded bg-white" *ngFor="let application of applicationItems">
         <div class="flex justify-between">
             <span class="text-lg font-bold" [ngClass]="{pending:title==='Pending' , processing:title==='Processing' , accepted:title==='Accepted',rejected:title==='Rejected'}" >{{application.companyName}}</span>
             <span class="">

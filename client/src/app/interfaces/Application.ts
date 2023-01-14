@@ -8,7 +8,7 @@ export interface Application {
     salary: number
     details: string
     appliedDate?: Date
-    interviewDate?: Date
+    interviewDate: Date
     status: string
     jobLink: string
     user : string

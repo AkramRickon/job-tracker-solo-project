@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiClientService } from '../api-client.service';
 import { Application } from '../interfaces/Application';
@@ -19,17 +19,18 @@ export class ApplicationFormComponent implements OnInit {
   // ]
   user: String | null = '';
   isSubmitted?: Boolean = false;
-  applicationForm = this.formBuilder.group({
-    companyName: [''],
-    location: "",
-    position: "",
-    jobNature: "",
-    employmentType: "",
-    details: "",
-    salary: "",
-    interviewDate: "",
-    status: "",
-    jobLink: ""
+  
+  applicationForm = new FormGroup({
+    companyName: new FormControl('', Validators.required),
+    location: new FormControl('', Validators.required),
+    position: new FormControl('', Validators.required),
+    jobNature: new FormControl('', Validators.required),
+    employmentType: new FormControl('', Validators.required),
+    details: new FormControl('', Validators.required),
+    salary: new FormControl('', Validators.required),
+    interviewDate: new FormControl(''),
+    status: new FormControl('', Validators.required),
+    jobLink: new FormControl('', Validators.required)
   })
 
   constructor(private formBuilder: FormBuilder,
@@ -41,7 +42,7 @@ export class ApplicationFormComponent implements OnInit {
   }
 
   handleSubmit() {
-    
+
     // this.user = this.authService.getUser();
     console.log(this.user);
     // console.log(this.applicationForm.value);

@@ -24,6 +24,16 @@ export class ApiClientService {
     return this.http.get<Application[]>(this.rootUrl, httpOptions);
   }
 
+  getUserApplication(email: any):Observable<Application[]> {
+    const httpOptions = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `${this.token}`
+      }
+    };
+    return this.http.post <Application[]>(`${this.rootUrl}/user`, { email }, httpOptions);
+  }
+
 
   getApplicationById(id: String): Observable<Application> {
     const httpOptions = {
@@ -35,8 +45,8 @@ export class ApiClientService {
 
     return this.http.get<Application>(`${this.rootUrl}/${id}`, httpOptions);
   }
-  
-  createApplication(application: any) {
+
+  createApplication(application: any) : Observable<Application>{
     console.log(application);
     const httpOptions = {
       headers: {
@@ -54,7 +64,7 @@ export class ApiClientService {
         'Authorization': `${this.token}`
       }
     };
-    return this.http.delete<Application>(`${this.rootUrl}/${id}`,httpOptions);
+    return this.http.delete<Application>(`${this.rootUrl}/${id}`, httpOptions);
   }
 
   updateApplication(application: any, id: String): Observable<Application> {

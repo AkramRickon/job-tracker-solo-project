@@ -1,5 +1,7 @@
-<div class="text-center text-lg border shadow p-1"
-    [ngClass]="{pending:title==='Pending' , processing:title==='Processing' , accepted:title==='Accepted',rejected:title==='Rejected'}">
-    <h2 class="font-bold">{{title}}</h2>
-    <h1 class="font-extrabold">{{statistics}}</h1>
+<div class="text-center flex text-lg h-[48%] mx-1 mb-1 border shadow"
+  >
+    <div class="flex justify-center items-center w-20 text-4xl bg-white" >{{statistics}}</div>
+    <div class="flex justify-center items-center w-full "   [ngClass]="{pending:title==='Pending' , processing:title==='Processing' , accepted:title==='Accepted',rejected:title==='Rejected'}">{{title}}</div>
+    
+   
 </div>
