@@ -8,7 +8,7 @@ const createUser = async (req, res) => {
     if (user) {
         return res
             .status(409)
-            .send({ error: '409', message: 'User already exists' });
+            .send({ error: '409', message: 'User already exists',success:false });
     }
     try {
         let { fullName, email, password, phoneNumber } = req.body;
@@ -16,6 +16,7 @@ const createUser = async (req, res) => {
 
         if (fullName && email && password && phoneNumber) {
             const result = await User.create({ fullName, email, password, phoneNumber });
+            console.log(result);
             res.status(200);
             res.send(result);
         }
@@ -25,8 +26,8 @@ const createUser = async (req, res) => {
         }
     }
     catch (error) {
-        console.log(error);
-        res.send(error);
+        // console.log(error);
+        res.send({ error: '409', message: 'Authentication Error',success:false });
         res.send(500);
     }
 }
@@ -58,18 +59,18 @@ const getUser = async (req, res) => {
                     "access_token": 'Bearer ' + token,
                     "expiresIn": "7d",
                     "email": user.email,
-                    "data" : result,
+                    // "data" : result,
                     "message": "Login Successful",
                 })
             }
             else {
-                res.status(401).json({ "message": "Authentication failed" });
+                res.status(401).json({ "message": "Authentication failed","suceess":false});
             }
         }
     }
     catch (error) {
         console.log(error);
-        res.send('Authentication Error');
+        res.json({ "message": "Authentication failed","suceess":false})
         res.send(401);
     }
 }

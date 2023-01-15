@@ -3,6 +3,7 @@ import { faUserXmark } from '@fortawesome/free-solid-svg-icons';
 import { faUserCheck } from '@fortawesome/free-solid-svg-icons';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { faBarsProgress } from '@fortawesome/free-solid-svg-icons';
+import { faUserClock } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -18,5 +19,6 @@ export class JobStatisticsCardComponent {
   faUserCheck=faUserCheck;
   faSpinner=faSpinner;
   faBarsProgress=faBarsProgress;
+  faUserClock=faUserClock;
 
 }

@@ -3,12 +3,15 @@
     background-color: #D0DCF2;
 }
 .navLinkColor{
-    color:#64799e;
+    background-color:#4F46E5;
+    color: white;
 }
 
-nav ul li a:hover{
-    color:#4C6796;
-}
+/* .navLinkColor:hover{
+    transition: 0.5;
+    transform: scale(1.2);
+
+} */
 
 .text {
     color: #4c5e6c

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -9,22 +9,63 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registerForm = new FormGroup({
-    fullName: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
-    phoneNumber: new FormControl('', Validators.required)
+  registerForm = this.fb.group({
+    fullName: ['', Validators.required],
+    email: ['', [Validators.required,Validators.email]],
+    password: ['', Validators.required],
+    confirmPassword: ['', Validators.required],
+    phoneNumber: ['', Validators.required]
   })
 
-  constructor(private authService: AuthService,private Router:Router) { }
+  isSubmitted?: Boolean = false;
+  userError: String = '';
+  isError: Boolean = false;
+  isPassError:Boolean=false;
+
+  constructor(private authService: AuthService, private Router: Router, private fb: FormBuilder) { }
   ngOnInit(): void {
   }
 
   handleRegister() {
     if (this.registerForm.valid) {
-      this.authService.proceedRegister(this.registerForm.value).subscribe(response=>console.log(response));
-      this.registerForm.reset();
-      this.Router.navigate(['/login']);
+      this.isError = false;
+
+      if (this.registerForm.value.password === this.registerForm.value.confirmPassword) {
+        this.isPassError = false;
+        
+        this.authService.proceedRegister(this.registerForm.value).subscribe({
+          next: response => {
+            this.isError = false;
+            this.isSubmitted = true;
+            this.registerForm.reset();
+            console.log(response);
+            setTimeout(() => {
+              this.Router.navigate(['/login']);
+            }, 2000)
+          },
+          error: error => {
+            this.userError = error.error.message;
+            this.isError = true;
+          }
+        })
+      }
+
+      else {
+      
+        this.isPassError = true;
+        this.userError = 'Password did not match';
+        this.registerForm.reset();
+        
+      }
     }
   }
+
+  get registerFormControl() {
+    return this.registerForm.controls;
+  }
+
+
+
+
+
 }

@@ -1,6 +1,7 @@
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,6 +12,7 @@ export class NavBarComponent implements OnInit {
 
 
   user: String | null = '';
+  faArrowRightFromBracket=faArrowRightFromBracket;
   constructor(private authService: AuthService, private route: Router) { };
   ngOnInit(): void {
     this.authCheck();
@@ -26,6 +28,10 @@ export class NavBarComponent implements OnInit {
 
   logOut() {
     localStorage.clear();
+  }
+
+  logIn(){
+    this.route.navigate(['/login']);
   }
 
 }
