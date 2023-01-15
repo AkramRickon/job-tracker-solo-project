@@ -1,4 +1,13 @@
-.formCustomization {
-    width: 40%;
-    margin: auto;
+
+.submitButton{
+    background-color: #4F46E5;
+    color:white;
+}
+
+.errorColor{
+    border:1px solid red;
+}
+
+.primaryText{
+    color: #4F46E5;
 }

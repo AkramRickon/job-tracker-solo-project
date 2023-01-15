@@ -30,16 +30,16 @@ export class UpdateApplicationComponent implements OnInit {
   // })
 
   applicationForm = this.formBuilder.group({
-    companyName: [''],
-    location: '',
-    position: '',
-    jobNature: '',
-    employmentType: '',
-    details: '',
-    salary: '',
+    companyName: ['',Validators.required],
+    location:  ['',Validators.required],
+    position:  ['',Validators.required],
+    jobNature:  ['',Validators.required],
+    employmentType:  ['',Validators.required],
+    details: ['',Validators.required],
+    salary:  ['',Validators.required],
     interviewDate: '',
-    status: '',
-    jobLink: ''
+    status:  ['',Validators.required],
+    jobLink:  ['',Validators.required],
   })
 
   constructor(private apiClient: ApiClientService,
@@ -66,6 +66,7 @@ export class UpdateApplicationComponent implements OnInit {
       this.applicationForm.controls['details'].setValue(response.details);
       this.applicationForm.controls['jobLink'].setValue(response.jobLink);
       this.applicationForm.controls['status'].setValue(response.status);
+      this.applicationForm.controls['interviewDate'].setValue(new Date(response.interviewDate).toDateString());
       this.applicationForm.controls['salary'].setValue(response.salary.toString());
     })
   }
@@ -77,5 +78,9 @@ export class UpdateApplicationComponent implements OnInit {
     setTimeout(() => {
       this.Router.navigate(['home']);
     }, 2000)
+  }
+
+  get applicationFormControl(){
+    return this.applicationForm.controls;
   }
 }

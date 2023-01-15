@@ -19,18 +19,18 @@ export class ApplicationFormComponent implements OnInit {
   // ]
   user: String | null = '';
   isSubmitted?: Boolean = false;
-  
-  applicationForm = new FormGroup({
-    companyName: new FormControl('', Validators.required),
-    location: new FormControl('', Validators.required),
-    position: new FormControl('', Validators.required),
-    jobNature: new FormControl('', Validators.required),
-    employmentType: new FormControl('', Validators.required),
-    details: new FormControl('', Validators.required),
-    salary: new FormControl('', Validators.required),
+
+  applicationForm = this.formBuilder.group({
+    companyName: ['', Validators.required],
+    location: ['', Validators.required],
+    position: ['', Validators.required],
+    jobNature:['', Validators.required],
+    employmentType: ['', Validators.required],
+    details:['', Validators.required],
+    salary:['', Validators.required],
     interviewDate: new FormControl(''),
-    status: new FormControl('', Validators.required),
-    jobLink: new FormControl('', Validators.required)
+    status: ['', Validators.required],
+    jobLink: ['', Validators.required]
   })
 
   constructor(private formBuilder: FormBuilder,
@@ -56,5 +56,9 @@ export class ApplicationFormComponent implements OnInit {
     setTimeout(() => {
       this.Router.navigate(['home']);
     }, 2000)
+  }
+
+  get applicationFormControl(){
+    return this.applicationForm.controls;
   }
 }
