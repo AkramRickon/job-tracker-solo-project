@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -11,40 +11,77 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent implements OnInit {
 
 
-  loginForm = new FormGroup({
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
+  loginForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required]
   })
 
   responseData: any;
   isSubmitted: boolean = false;
+  userError: String = '';
+  isError: Boolean = false;
 
   constructor(
     private authService: AuthService,
-    private Router: Router) {
-      localStorage.clear();
-     }
+    private Router: Router,
+    private fb: FormBuilder) {
+    localStorage.clear();
+  }
 
   ngOnInit(): void {
   }
 
   handleLogin() {
+
     if (this.loginForm.valid) {
-      this.authService.proceedLogin(this.loginForm.value).subscribe(response => {
-        if (response !== null) {
+      this.authService.proceedLogin(this.loginForm.value).subscribe({
+        next: response => {
           this.responseData = response;
-          // console.log(response);
+          console.log(response);
           localStorage.setItem('token', this.responseData.access_token);
-          localStorage.setItem('user',this.responseData.email);
-  
+          localStorage.setItem('user', this.responseData.email);
+
+          this.isError = false;
           this.isSubmitted = true;
+          this.loginForm.reset();
+          
           setTimeout(() => {
-            this.Router.navigate(['/home']);
-          },2000)
+            this.Router.navigate(['home']);
+          }, 2000)
+        },
+        error: error => {
+          this.userError = error.error.message;
+          this.isError = true;
         }
-      });
-      this.loginForm.reset();
+      })
     }
+
+
+
+    //     this.authService.proceedLogin(this.loginForm.value).subscribe(response => {
+    //       if (response !== null) {
+    //         this.responseData = response;
+    //         // console.log(response);
+    //         localStorage.setItem('token', this.responseData.access_token);
+    //         localStorage.setItem('user',this.responseData.email);
+
+    //         this.isSubmitted = true;
+    //         setTimeout(() => {
+    //           this.Router.navigate(['/home']);
+    //         },2000)
+    //       }
+    //     });
+    //     this.loginForm.reset();
+    //   }
+    // }
+
+    // get loginFormControl() {
+    //   return this.loginForm.controls;
+    // }
+  }
+
+  get loginFormControl(){
+    return this.loginForm.controls;
   }
 
 }

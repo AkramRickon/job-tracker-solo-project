@@ -16,7 +16,7 @@
                             class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                                 <h1
-                                    class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                                    class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white primaryText">
                                     Register Account
                                 </h1>
                                 <form [formGroup]="registerForm" (ngSubmit)="handleRegister()"
@@ -52,6 +52,8 @@
                                             >
                                     </div>
 
+                                    <small *ngIf="registerFormControl.password.invalid && registerFormControl.password.touched" class="text-xs">min length 8 charater</small>
+
                                     <div>
                                         <label for="confirmPassword"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm Password</label>
@@ -64,7 +66,7 @@
 
                                     
                                     <div *ngIf="isPassError"
-                                        class="flex p-1 text-sm text-red-700 bg-red-100">
+                                        class="flex p-1 rounded text-sm text-red-700 bg-red-100">
                                         <div>
                                             <span class="font-medium">{{userError}}</span>
                                         </div>

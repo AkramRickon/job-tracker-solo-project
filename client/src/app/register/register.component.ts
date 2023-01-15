@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
   registerForm = this.fb.group({
     fullName: ['', Validators.required],
     email: ['', [Validators.required,Validators.email]],
-    password: ['', Validators.required],
+    password: ['', [Validators.required,Validators.minLength(8)]],
     confirmPassword: ['', Validators.required],
     phoneNumber: ['', Validators.required]
   })
@@ -63,9 +63,5 @@ export class RegisterComponent implements OnInit {
   get registerFormControl() {
     return this.registerForm.controls;
   }
-
-
-
-
 
 }

@@ -39,7 +39,7 @@ const getUser = async (req, res) => {
         // console.log(user);
         if (user) {
             const isValidPassword = await bcrypt.compare(password, user.password);
-            const result = await Application.find({ user: user.email });
+            // const result = await Application.find({ user: user.email });
             
             if (isValidPassword) {
 
@@ -64,8 +64,11 @@ const getUser = async (req, res) => {
                 })
             }
             else {
-                res.status(401).json({ "message": "Authentication failed","suceess":false});
+                res.status(401).json({ "message": "Password did not match","suceess":false});
             }
+        }
+        else {
+            res.status(401).json({ "message": "User Not Found","suceess":false});
         }
     }
     catch (error) {
