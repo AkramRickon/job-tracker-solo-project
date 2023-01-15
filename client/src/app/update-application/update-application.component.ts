@@ -16,18 +16,6 @@ export class UpdateApplicationComponent implements OnInit {
   applicationId!: String;
   isSubmitted?: Boolean = false;
   user: String | null = '';
-  // UpdateApplicationForm = new FormGroup({
-  //   companyName: new FormControl(''),
-  //   location:new FormControl(''),
-  //   position:new FormControl(''),
-  //   jobNature: new FormControl(''),
-  //   employmentType: new FormControl(''),
-  //   details: new FormControl(''),
-  //   salary: new FormControl(''),
-  //   interviewDate: new FormControl(''),
-  //   status: new FormControl(''),
-  //   jobLink: new FormControl('')
-  // })
 
   applicationForm = this.formBuilder.group({
     companyName: ['',Validators.required],

@@ -212,22 +212,13 @@
 
 
 
-                            <!-- <select formControlName="status">
-                                            <option value="" disabled>Status</option>
-                                            <option value="pending">Pending</option>
-                                            <option value="processing">Processing</option>
-                                            <option value="rejected">Rejected</option>
-                                            <option value="accepted">Accepted</option>
-                                        </select> -->
-
-
                             <div class="w-2/5">
                                 <label for="status"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an
                                     option</label>
                                 <select id="status" formControlName="status"
                                 [ngClass]="{errorColor:applicationFormControl.status.invalid && applicationFormControl.status.touched}"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
                                     <option value="" disabled>Status</option>
                                     <option value="pending">Pending</option>
                                     <option value="accepted">Accepted</option>
@@ -248,7 +239,7 @@
                                 </svg>
                                 <span class="sr-only"></span>
                                 <div>
-                                    <span class="font-medium">Application Added! Redirecting to home page</span>
+                                    <span class="font-medium">Application Updated! Redirecting to home page</span>
                                 </div>
                             </div>
 

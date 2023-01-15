@@ -1,19 +1,18 @@
 <section class="h-screen">
-    <div class="px-6 h-full w-3/4 mx-auto text-gray-800">
+    <div class="px-6  h-full w-3/4 mx-auto text-gray-800">
 
         <div class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
-            <div class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0">
+            <div class="grow-0 shrink-1 md:shrink-0 basis-auto w-2/4 ">
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
                     class="w-full" alt="Sample image" />
             </div>
-            <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
+            <div class="w-2/4">
 
 
                 <section class=" dark:bg-gray-900">
-                    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                    <div class="flex flex-col items-center justify-center px-6 py-5 mx-auto ">
 
-                        <div
-                            class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                        <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                                 <h1
                                     class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white primaryText">
@@ -22,44 +21,44 @@
                                 <form [formGroup]="registerForm" (ngSubmit)="handleRegister()"
                                     class="space-y-4 md:space-y-6">
                                     <div>
-                                        <label for="fullName"
+                                        <!-- <label for="fullName"
                                             class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Full
-                                            name</label>
+                                            name</label> -->
 
                                         <input formControlName="fullName" type="text" name="fullName" id="fullName"
                                         [ngClass]="{errorColor:registerFormControl.fullName.invalid && registerFormControl.fullName.touched}"
-                                            class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2.5  placeholder-gray-400"
-                                            placeholder="ex. Tamim Iqbal" >
+                                            class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
+                                            placeholder="fullName" >
                                     </div>
 
                                     <div>
-                                        <label for="email"
+                                        <!-- <label for="email"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
-                                            email</label>
+                                            email</label> -->
                                         <input formControlName="email" type="email" name="email" id="email"
                                         [ngClass]="{errorColor:registerFormControl.email.invalid && registerFormControl.email.touched}"
-                                            class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2.5  placeholder-gray-400"
-                                            placeholder="example@gmail.com" required="">
+                                            class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
+                                            placeholder="email" required="">
                                     </div>
 
                                     <div>
-                                        <label for="password"
-                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                                        <!-- <label for="password"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label> -->
                                         <input formControlName="password" type="password" name="password" id="password"
                                             placeholder="••••••••"
                                             [ngClass]="{errorColor:registerFormControl.password.invalid && registerFormControl.password.touched}"
-                                            class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2.5  placeholder-gray-400"
+                                            class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
                                             >
                                     </div>
 
                                     <small *ngIf="registerFormControl.password.invalid && registerFormControl.password.touched" class="text-xs">min length 8 charater</small>
 
                                     <div>
-                                        <label for="confirmPassword"
-                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm Password</label>
+                                        <!-- <label for="confirmPassword"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm Password</label> -->
                                         <input formControlName="confirmPassword" type="password" name="confirmPassword" id="confirmPassword"
-                                            placeholder="••••••••"
-                                            class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2.5  placeholder-gray-400"
+                                            placeholder="confirmPassword"
+                                            class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
                                             [ngClass]="{errorColor:registerFormControl.confirmPassword.invalid && registerFormControl.confirmPassword.touched}">
                                     </div>
 
@@ -74,9 +73,9 @@
 
 
                                     <div>
-                                        <label for="phoneNumber"
+                                        <!-- <label for="phoneNumber"
                                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone
-                                            Number</label>
+                                            Number</label> -->
                                         <input formControlName="phoneNumber" type="text" name="phoneNumber"
                                             id="phoneNumber"
                                             [ngClass]="{errorColor:registerFormControl.phoneNumber.invalid && registerFormControl.phoneNumber.touched}"
