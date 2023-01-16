@@ -26,19 +26,23 @@
 .pendingNumber {
     color: #FF8800;
     padding: 1px 5px;
+    font-weight: bolder;
 }
 
 .processingNumber {
     color: #4F46E5;
     padding: 1px 5px;
+    font-weight: bolder;
 }
 
 .acceptedNumber {
     color: #10B981;
     padding: 1px 5px;
+    font-weight: bolder;
 }
 
 .rejectedNumber {
     color: #f83707;
     padding: 1px 5px;
+    font-weight: bolder;
 }

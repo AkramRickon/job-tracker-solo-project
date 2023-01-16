@@ -7,24 +7,24 @@
 .pending{
     background-color: rgb(255, 136, 0);
     color:white;
-    padding:2px 10px;
-    border-radius: 30px;
+    padding:0px 10px;
+    /* border-radius: 30px; */
 }
 .processing{
    background-color: #4F46E5 ;
     color:white;
-    padding:2px 10px;
-    border-radius: 30px;
+    padding:0px 10px;
+    /* border-radius: 30px; */
 }
 .accepted{
     background-color: #10B981;
     color:white;
-    padding:2px 10px;
-    border-radius: 30px;
+    padding:0px 10px;
+    /* border-radius: 30px; */
 }
 .rejected{
     background-color: rgb(255, 51, 0);
     color:white;
-    padding:2px 10px;
-    border-radius: 30px;
+    padding:0px 10px;
+    /* border-radius: 30px; */
 }

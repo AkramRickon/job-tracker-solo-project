@@ -1,25 +1,127 @@
-<div class="my-5 mx-16 w-2/5 leading-loose">
-    <div>
-        <button (click)="handleGoBack()" class="bg-purple-700 text-white px-2 rounded-sm mt-2 mb-5"><fa-icon
-                class="mr-1" [icon]="faArrowLeftLong"></fa-icon> Go Back</button>
+<div>
+    <div class="mx-20 mt-2">
+        <button (click)="handleGoBack()" class="goBackBtn text-white px-3 py-1 rounded-md mt-2 mb-5"><fa-icon class="mr-1"
+                [icon]="faArrowLeftLong"></fa-icon> Go Back</button>
     </div>
-    <h2 class="text-xl font-bold underline my-2">Job Application Details</h2>
-    <div *ngIf="applicationDetails">
-        <h2 class="text-lg my-2"><span class="font-bold">Company</span> : {{applicationDetails.companyName}}</h2>
-        <h3 class="font-bold text-lg  my-2"><span>Position</span> : {{applicationDetails.position}}</h3>
-        <h3 class="text-lg my-2"><span class="font-bold">Job Nature</span> : {{applicationDetails.jobNature}} </h3>
-        <h3 class="text-lg my-2"><span class="font-bold">Office Location</span> : {{applicationDetails.location}} </h3>
-        <h3 class="text-lg my-2"><span class="font-bold">Employment Type</span> : {{applicationDetails.employmentType}}
-        </h3>
-        <h3 class="text-lg my-2"><span class="font-bold">Job Details</span> : {{applicationDetails.details}} </h3>
-        <h3 class="text-lg"><span class="font-bold">Salary</span> : {{applicationDetails.salary}} </h3>
-        <h3 class="text-lg my-2"><span class="font-bold">Applied Date</span> : {{applicationDetails.appliedDate | date}}
-        </h3>
+    <div class="my-10  w-2/5 mx-auto p-5 bg-white shadow-md leading-loose">
 
-        <h3 class="text-lg font-bold  my-2">
-            <span>Job Link</span> : <a href="{{applicationDetails.jobLink}}" target="_blank"
-                class="bg-gray-300 px-3 py-1 rounded">
-                Visit <fa-icon [icon]="faPaperPlane"></fa-icon> </a>
-        </h3>
+        <h2 class="text-2xl font-bold my-3 text-center">
+            <span class="text-violet-800 p-1 underline rounded ">Job Application Details</span>
+        </h2>
+        <div *ngIf="applicationDetails">
+            <div class="text my-2  ">
+                <span class="font-bold text-violet-800">
+                    <fa-icon class="" [icon]="faHouse"></fa-icon>
+                    Company
+                </span> : {{applicationDetails.companyName}}
+            </div>
+            <div class="font-bold text-lg  my-2">
+                <span class="text-violet-800">
+                    <fa-icon class="text-sm" [icon]="faMapPin"></fa-icon>
+                    Position</span> : {{applicationDetails.position}}
+            </div>
+            <div class="text my-2">
+                <span class="font-bold text-violet-800">
+                    <fa-icon class="" [icon]="faRoute"></fa-icon>
+                    Job Nature
+                </span>
+                : {{applicationDetails.jobNature}}
+            </div>
+            <div class="text my-2">
+                <span class="font-bold text-violet-800">
+                    <fa-icon class="" [icon]="faLocationDot"></fa-icon>
+                    Office Location</span>
+                : {{applicationDetails.location}}
+            </div>
+            <div class="text my-2">
+                <span class="font-bold text-violet-800">
+                    <fa-icon class="text" [icon]="faUser"></fa-icon>
+                    Employment Type
+                </span> : {{applicationDetails.employmentType}}
+            </div>
+            <div class="text my-2">
+                <span class="font-bold text-violet-800">
+                    <fa-icon class="text" [icon]="faPaperclip"></fa-icon>
+                    Job Details</span> : {{applicationDetails.details}}
+            </div>
+            <div class="text"><span class="font-bold text-violet-800">
+                    <fa-icon class="text" [icon]="faDollar"></fa-icon>
+                    Salary</span> : {{applicationDetails.salary}} </div>
+            <h3 class="text my-2"><span class="font-bold text-violet-800">
+                    <fa-icon class="text" [icon]="faCalendarDays"></fa-icon>
+                    Applied Date</span> : {{applicationDetails.appliedDate | date}}
+            </h3>
+
+            <div class="text font-bold  my-2">
+                <span class="text-violet-800">
+                    <fa-icon class="text" [icon]="faGlobe"></fa-icon>
+                    Job Link</span> : <a href="{{applicationDetails.jobLink}}" target="_blank"
+                    class="bg-gray-300 px-3 py-1 rounded">
+                    Visit <fa-icon [icon]="faPaperPlane"></fa-icon> </a>
+            </div>
+        </div>
     </div>
 </div>
+
+<!-- 
+<div class="my-10  w-2/5 mx-auto p-5 bg-white shadow-md leading-loose">
+    <div>
+        <button (click)="handleGoBack()" class="goBackBtn text-white px-2 rounded-sm mt-2 mb-5"><fa-icon class="mr-1"
+                [icon]="faArrowLeftLong"></fa-icon> Go Back</button>
+    </div>
+    <h2 class="text-2xl font-bold my-3 text-center">
+        <span class="text-violet-800 p-1 underline rounded ">Job Application Details</span>
+    </h2>
+    <div *ngIf="applicationDetails">
+        <div class="text my-2  ">
+            <span class="font-bold text-violet-800">
+                <fa-icon class="" [icon]="faHouse"></fa-icon>
+                Company
+            </span> : {{applicationDetails.companyName}}
+        </div>
+        <div class="font-bold text-lg  my-2">
+            <span class="text-violet-800">
+                <fa-icon class="text-sm" [icon]="faMapPin"></fa-icon>
+                Position</span> : {{applicationDetails.position}}
+        </div>
+        <div class="text my-2">
+            <span class="font-bold text-violet-800">
+                <fa-icon class="" [icon]="faRoute"></fa-icon>
+                Job Nature
+            </span>
+            : {{applicationDetails.jobNature}}
+        </div>
+        <div class="text my-2">
+            <span class="font-bold text-violet-800">
+                <fa-icon class="" [icon]="faLocationDot"></fa-icon>
+                Office Location</span>
+            : {{applicationDetails.location}}
+        </div>
+        <div class="text my-2">
+            <span class="font-bold text-violet-800">
+                <fa-icon class="text" [icon]="faUser"></fa-icon>
+                Employment Type
+            </span> : {{applicationDetails.employmentType}}
+        </div>
+        <div class="text my-2">
+            <span class="font-bold text-violet-800">
+                <fa-icon class="text" [icon]="faPaperclip"></fa-icon>
+                Job Details</span> : {{applicationDetails.details}}
+        </div>
+        <div class="text"><span class="font-bold text-violet-800">
+                <fa-icon class="text" [icon]="faDollar"></fa-icon>
+                Salary</span> : {{applicationDetails.salary}} </div>
+        <h3 class="text my-2"><span class="font-bold text-violet-800">
+                <fa-icon class="text" [icon]="faCalendarDays"></fa-icon>
+                Applied Date</span> : {{applicationDetails.appliedDate | date}}
+        </h3>
+
+        <div class="text font-bold  my-2">
+            <span class="text-violet-800">
+                <fa-icon class="text" [icon]="faGlobe"></fa-icon>
+                Job Link</span> : <a href="{{applicationDetails.jobLink}}" target="_blank"
+                class="bg-gray-300 px-3 py-1 rounded">
+                Visit <fa-icon [icon]="faPaperPlane"></fa-icon> </a>
+        </div>
+    </div>
+</div> -->

@@ -128,7 +128,7 @@
                             class="space-y-4 md:space-y-6">
                             <div>
                                 <input formControlName="companyName" type="text" name="companyName" id="companyName"
-                                [ngClass]="{errorColor:applicationFormControl.companyName.invalid && applicationFormControl.companyName.touched}"
+                                    [ngClass]="{errorColor:applicationFormControl.companyName.invalid && applicationFormControl.companyName.touched}"
                                     class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
                                     placeholder="Company Name">
                             </div>
@@ -136,7 +136,7 @@
 
                             <div>
                                 <input formControlName="position" type="text" name="position" id="position"
-                                [ngClass]="{errorColor:applicationFormControl.position.invalid && applicationFormControl.position.touched}"
+                                    [ngClass]="{errorColor:applicationFormControl.position.invalid && applicationFormControl.position.touched}"
                                     class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2 placeholder-gray-400"
                                     placeholder="position">
                             </div>
@@ -149,14 +149,14 @@
 
                                 <div class="w-2/4">
                                     <input formControlName="location" type="text" name="location" id="location"
-                                    [ngClass]="{errorColor:applicationFormControl.location.invalid && applicationFormControl.location.touched}"
+                                        [ngClass]="{errorColor:applicationFormControl.location.invalid && applicationFormControl.location.touched}"
                                         class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
                                         placeholder="Location">
                                 </div>
 
                                 <div class="w-2/4">
                                     <input formControlName="salary" type="text" name="salary" id="salary"
-                                    [ngClass]="{errorColor:applicationFormControl.salary.invalid && applicationFormControl.salary.touched}"
+                                        [ngClass]="{errorColor:applicationFormControl.salary.invalid && applicationFormControl.salary.touched}"
                                         class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
                                         placeholder="salary">
                                 </div>
@@ -170,13 +170,14 @@
                             <div class="flex gap-9">
                                 <div class="w-2/4">
                                     <input formControlName="jobNature" type="text" name="jobNature" id="jobNature"
-                                    [ngClass]="{errorColor:applicationFormControl.jobNature.invalid && applicationFormControl.jobNature.touched}"
+                                        [ngClass]="{errorColor:applicationFormControl.jobNature.invalid && applicationFormControl.jobNature.touched}"
                                         class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2 placeholder-gray-400"
                                         placeholder="jobNature">
                                 </div>
                                 <div class="w-2/4">
 
-                                    <input formControlName="employmentType" type="text" name="employmentType" id="employmentType"
+                                    <input formControlName="employmentType" type="text" name="employmentType"
+                                        id="employmentType"
                                         [ngClass]="{errorColor:applicationFormControl.employmentType.invalid && applicationFormControl.employmentType.touched}"
                                         class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2 placeholder-gray-400"
                                         placeholder="employmentType">
@@ -186,7 +187,7 @@
 
                             <div>
                                 <textarea rows="2" formControlName="details" type="text" name="details" id="details"
-                                [ngClass]="{errorColor:applicationFormControl.details.invalid && applicationFormControl.details.touched}"
+                                    [ngClass]="{errorColor:applicationFormControl.details.invalid && applicationFormControl.details.touched}"
                                     class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
                                     placeholder="details"></textarea>
                             </div>
@@ -194,40 +195,43 @@
 
                             <div>
                                 <input formControlName="jobLink" type="text" name="jobLink" id="jobLink"
-                                [ngClass]="{errorColor:applicationFormControl.jobLink.invalid && applicationFormControl.jobLink.touched}"
+                                    [ngClass]="{errorColor:applicationFormControl.jobLink.invalid && applicationFormControl.jobLink.touched}"
                                     class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
                                     placeholder="job link">
                             </div>
 
-                            <div class="w-2/5">
-                                <label for="interviewDate"
-                                    class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">interview
-                                    Date</label>
+                            <div class="flex gap-9">
+                                <div class="w-3/5">
+                                    <label for="interviewDate"
+                                        class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">interview
+                                        Date</label>
 
-                                <input formControlName="interviewDate" type="date" name="interviewDate"
-                                    id="interviewDate"
-                                    class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
-                                    placeholder="">
+                                    <input formControlName="interviewDate" type="date" name="interviewDate"
+                                        id="interviewDate"
+                                        class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
+                                        placeholder="">
+                                </div>
+
+
+
+                                <div class="w-3/5">
+                                    <label for="status"
+                                        class="block mb-2 text-sm font-medium text-gray-900 focus:border-blue-600">Select an
+                                        option</label>
+                                    <select id="status" formControlName="status"
+                                        [ngClass]="{errorColor:applicationFormControl.status.invalid && applicationFormControl.status.touched}"
+                                        class="bg-gray-50 border border-gray-300  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
+                                        <option value="" disabled>Status</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="accepted">Accepted</option>
+                                        <option value="processing">Processing</option>
+                                        <option value="rejected">Rejected</option>
+                                    </select>
+                                </div>
                             </div>
 
-
-
-                            <div class="w-2/5">
-                                <label for="status"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an
-                                    option</label>
-                                <select id="status" formControlName="status"
-                                [ngClass]="{errorColor:applicationFormControl.status.invalid && applicationFormControl.status.touched}"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
-                                    <option value="" disabled>Status</option>
-                                    <option value="pending">Pending</option>
-                                    <option value="accepted">Accepted</option>
-                                    <option value="processing">Processing</option>
-                                    <option value="rejected">Rejected</option>
-                                </select>
-                            </div>
-
-                            <button type="submit" [disabled]="!applicationForm.valid" class="w-full  focus:ring-4 focus:outline-none  font-medium rounded-lg text-md px-5 py-2.5 text-center  submitButton ">Submit</button>
+                            <button type="submit" [disabled]="!applicationForm.valid"
+                                class="w-full  focus:ring-4 focus:outline-none  font-medium rounded-lg text-md px-5 py-2.5 text-center  submitButton ">Submit</button>
 
                             <div *ngIf="isSubmitted"
                                 class="flex p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg " role="alert">

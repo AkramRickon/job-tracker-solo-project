@@ -2,29 +2,29 @@
     <span class="text-xl font-bold my-2"> {{title}}</span>
 
 
-    <div class="border my-4 p-2 rounded bg-white" *ngFor="let application of applicationItems">
+    <div class="border shadow my-4 p-2 rounded bg-white" *ngFor="let application of applicationItems">
         <div class="flex justify-between">
-            <span class="text-lg font-bold"
+            <span class="text-md font-bold  rounded-full"
                 [ngClass]="{pending:title==='Pending' , processing:title==='Processing' , accepted:title==='Accepted',rejected:title==='Rejected'}">{{application.companyName}}</span>
             <div class="">
                 <button (click)="handleUpdate(application._id)">
 
-                    <fa-icon class="mr-2 bg-gray-100 px-4 py-1 rounded text-slate-800" [icon]="faPenToSquare"></fa-icon>
+                    <fa-icon class="mr-2 bg-gray-100 px-3 py-1 rounded text-slate-800" [icon]="faPenToSquare"></fa-icon>
                 </button>
                 <button (click)="handleDelete(application._id)">
-                    <fa-icon class="text-red-500 bg-red-100 px-4 py-1 rounded" [icon]="faTrashCan"></fa-icon>
+                    <fa-icon class="text-red-500 bg-red-100 px-3 py-1 roundd" [icon]="faTrashCan"></fa-icon>
                 </button>
             </div>
         </div>
-        <div class="font-bold text-lg">{{application.position}}</div>
-        <div class=" "><span>{{application.jobNature}}</span> <span class="fold-extrabold text-lg">,</span> <span
-                class="ml-2">{{application.employmentType}}</span> </div>
+        <div class="font-semibold text mt-2">{{application.position}}</div>
+        <div class="text-base "><span>{{application.jobNature}}</span> <span class="fold-extrabold text-lg">,</span> <span
+                class="text-sm ml-2">{{application.employmentType}}</span> </div>
 
         <!-- <div>{{application.location}}</div> -->
 
         <div>
-            <span class="text-lg">
-                <fa-icon class="font-bold  text-orange-500 mr-1 " [icon]="faDollar"></fa-icon>
+            <span class="text">
+                <fa-icon class="font-bold text-orange-500 mr-1 " [icon]="faDollar"></fa-icon>
                 <span class="">{{application.salary}}
                 </span>
             </span>

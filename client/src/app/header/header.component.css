@@ -25,11 +25,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color:#4C6796;
-    font-family: 'Great Vibes', cursive;
+   
     font-size: 60px;
     font-weight: 400;
-
     position: absolute;
     right: 0;
     top:0;
