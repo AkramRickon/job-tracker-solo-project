@@ -16,7 +16,7 @@ const createUser = async (req, res) => {
 
         if (fullName && email && password && phoneNumber) {
             const result = await User.create({ fullName, email, password, phoneNumber });
-            console.log(result);
+            // console.log(result);
             res.status(200);
             res.send(result);
         }
