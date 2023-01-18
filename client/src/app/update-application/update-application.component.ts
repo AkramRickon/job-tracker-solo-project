@@ -17,6 +17,7 @@ export class UpdateApplicationComponent implements OnInit {
   applicationId!: String;
   isSubmitted?: Boolean = false;
   user: String | null = '';
+  currentDate: Date= new Date();
 
   applicationForm = this.formBuilder.group({
     companyName: ['', Validators.required],

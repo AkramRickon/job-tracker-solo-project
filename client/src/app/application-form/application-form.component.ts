@@ -28,7 +28,7 @@ export class ApplicationFormComponent implements OnInit {
     employmentType: ['', Validators.required],
     details: ['', Validators.required],
     salary: ['', Validators.required],
-    interviewDate: new FormControl(''),
+    interviewDate: '',
     status: ['', Validators.required],
     jobLink: ['', Validators.required]
   })
