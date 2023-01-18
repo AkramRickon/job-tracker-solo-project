@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiClientService } from '../api-client.service';
+import { ApiClientService } from '../services/api-client.service';
 import { Application } from '../interfaces/Application';
 import { AuthService } from '../services/auth.service';
 
@@ -24,10 +24,10 @@ export class ApplicationFormComponent implements OnInit {
     companyName: ['', Validators.required],
     location: ['', Validators.required],
     position: ['', Validators.required],
-    jobNature:['', Validators.required],
+    jobNature: ['', Validators.required],
     employmentType: ['', Validators.required],
-    details:['', Validators.required],
-    salary:['', Validators.required],
+    details: ['', Validators.required],
+    salary: ['', Validators.required],
     interviewDate: new FormControl(''),
     status: ['', Validators.required],
     jobLink: ['', Validators.required]
@@ -58,7 +58,7 @@ export class ApplicationFormComponent implements OnInit {
     }, 2000)
   }
 
-  get applicationFormControl(){
+  get applicationFormControl() {
     return this.applicationForm.controls;
   }
 }

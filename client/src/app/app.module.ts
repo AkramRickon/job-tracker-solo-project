@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -7,11 +7,11 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ApplicationFormComponent } from './application-form/application-form.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JobStatusComponent } from './job-status/job-status.component';
 import { ApplicationListComponent } from './application-list/application-list.component';
@@ -39,7 +39,7 @@ import { JobStatisticsCardComponent } from './job-statistics-card/job-statistics
     RegisterComponent,
     JobApplicationStatisticsComponent,
     JobStatisticsCardComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -47,9 +47,9 @@ import { JobStatisticsCardComponent } from './job-statistics-card/job-statistics
     ReactiveFormsModule,
     HttpClientModule,
     FontAwesomeModule,
-    
+
   ],
-  
+
   providers: [],
   bootstrap: [AppComponent]
 })

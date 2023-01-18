@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Application } from './interfaces/Application';
+import { Application } from '../interfaces/Application';
 import { Observable } from 'rxjs';
-import { AuthService } from './services/auth.service';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -24,14 +24,14 @@ export class ApiClientService {
     return this.http.get<Application[]>(this.rootUrl, httpOptions);
   }
 
-  getUserApplication(email: any):Observable<Application[]> {
+  getUserApplication(email: any): Observable<Application[]> {
     const httpOptions = {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `${this.token}`
       }
     };
-    return this.http.post <Application[]>(`${this.rootUrl}/user`, { email }, httpOptions);
+    return this.http.post<Application[]>(`${this.rootUrl}/user`, { email }, httpOptions);
   }
 
 
@@ -46,7 +46,7 @@ export class ApiClientService {
     return this.http.get<Application>(`${this.rootUrl}/${id}`, httpOptions);
   }
 
-  createApplication(application: any) : Observable<Application>{
+  createApplication(application: any): Observable<Application> {
     console.log(application);
     const httpOptions = {
       headers: {

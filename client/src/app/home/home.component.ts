@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiClientService } from '../api-client.service';
+import { ApiClientService } from '../services/api-client.service';
 import { Application } from '../interfaces/Application';
 import { AuthService } from '../services/auth.service';
 

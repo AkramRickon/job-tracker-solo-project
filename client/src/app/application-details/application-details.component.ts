@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiClientService } from '../api-client.service';
+import { ApiClientService } from '../services/api-client.service';
 import { Application } from '../interfaces/Application';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
@@ -31,16 +31,16 @@ export class ApplicationDetailsComponent implements OnInit {
   applicationId!: String
   faPaperPlane = faPaperPlane
   faArrowLeftLong = faArrowLeftLong
-  faGlobe=faGlobe;
-  faCalendarDays=faCalendarDays;
-  faDollar=faDollar;
-  faBars=faBars;
-  faPaperclip=faPaperclip;
-  faUser=faUser;
-  faLocationDot=faLocationDot;
-  faRoute=faRoute;
-  faMapPin=faMapPin;
-  faHouse=faHouse;
+  faGlobe = faGlobe;
+  faCalendarDays = faCalendarDays;
+  faDollar = faDollar;
+  faBars = faBars;
+  faPaperclip = faPaperclip;
+  faUser = faUser;
+  faLocationDot = faLocationDot;
+  faRoute = faRoute;
+  faMapPin = faMapPin;
+  faHouse = faHouse;
 
   constructor(private apiClient: ApiClientService, private ActivatedRoute: ActivatedRoute, private Router: Router) { }
   ngOnInit(): void {

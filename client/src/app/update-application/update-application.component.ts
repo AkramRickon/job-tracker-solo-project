@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiClientService } from '../api-client.service';
+import { ApiClientService } from '../services/api-client.service';
 import { Application } from '../interfaces/Application';
 import { AuthService } from '../services/auth.service';
+import { formatDate } from '@angular/common' 
 
 @Component({
   selector: 'app-update-application',
@@ -18,16 +19,16 @@ export class UpdateApplicationComponent implements OnInit {
   user: String | null = '';
 
   applicationForm = this.formBuilder.group({
-    companyName: ['',Validators.required],
-    location:  ['',Validators.required],
-    position:  ['',Validators.required],
-    jobNature:  ['',Validators.required],
-    employmentType:  ['',Validators.required],
-    details: ['',Validators.required],
-    salary:  ['',Validators.required],
+    companyName: ['', Validators.required],
+    location: ['', Validators.required],
+    position: ['', Validators.required],
+    jobNature: ['', Validators.required],
+    employmentType: ['', Validators.required],
+    details: ['', Validators.required],
+    salary: ['', Validators.required],
     interviewDate: '',
-    status:  ['',Validators.required],
-    jobLink:  ['',Validators.required],
+    status: ['', Validators.required],
+    jobLink: ['', Validators.required],
   })
 
   constructor(private apiClient: ApiClientService,
@@ -54,21 +55,21 @@ export class UpdateApplicationComponent implements OnInit {
       this.applicationForm.controls['details'].setValue(response.details);
       this.applicationForm.controls['jobLink'].setValue(response.jobLink);
       this.applicationForm.controls['status'].setValue(response.status);
-      this.applicationForm.controls['interviewDate'].setValue(new Date(response.interviewDate).toDateString());
+      // this.applicationForm.controls['interviewDate'].setValue(formatDate((response.interviewDate),'yyyy-MM-dd','en') || new Date ().toLocaleString());
       this.applicationForm.controls['salary'].setValue(response.salary.toString());
     })
   }
   handleUpdate() {
     this.isSubmitted = true;
     console.log(this.applicationForm.setValue);
-    this.apiClient.updateApplication({...this.applicationForm.value,user:this.user}, this.applicationId).subscribe(res => console.log(res));
+    this.apiClient.updateApplication({ ...this.applicationForm.value, user: this.user }, this.applicationId).subscribe(res => console.log(res));
     this.applicationForm.reset();
     setTimeout(() => {
       this.Router.navigate(['home']);
     }, 2000)
   }
 
-  get applicationFormControl(){
+  get applicationFormControl() {
     return this.applicationForm.controls;
   }
 }
