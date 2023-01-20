@@ -40,10 +40,6 @@ export class JobApplicationStatisticsComponent implements OnInit {
     this.title2 = "Processing"
     this.title3 = "Accepted"
     this.title4 = "Rejected"
-    // console.log(this.accepted);
-    // console.log(this.processing);
-    // console.log(this.pending);
-    // console.log(this.rejected);
   }
 
   filterApplication() {
@@ -53,9 +49,6 @@ export class JobApplicationStatisticsComponent implements OnInit {
     this.processing = this.applicationList.filter(application => application.status === 'processing').length;
     this.upComingInterview = this.applicationList.filter(application => application.status === 'processing')
     this.upComingInterview = this.upComingInterview.sort((a, b) => new Date(a.interviewDate).getTime() - new Date(b.interviewDate).getTime());
-    
-    // this.upComingInterview = this.upComingInterview.sort((a, b) => new Date(a.interviewDate).toLocaleString() - new Date(b.interviewDate).toLocaleString());
-    // this.upComingInterview=this.applicationList.filter(application=> new Date (application.interviewDate).getTime()> Date.now());
-  }
 
+  }
 } 

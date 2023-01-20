@@ -1,48 +1,6 @@
-<!-- <div class="container ml-20 my-20">
-    <div class="allJobContainer ">
-        <div class="text-center shadow border text-lg  bg-blue-400 ">
-            <div class="my-2">
-                <h3 class="text-center font-bold text-lg">Total Job Applied</h3>
-                <h2 class="font-extrabold text-xl">{{applicationList.length}}</h2>
-                <p class="font-bold">Add More Jobs</p>
-            </div>
-            <!-- <hr class="w-full h-1 mx-auto  bg-gray-100 border-0 rounded  dark:bg-gray-700"> -->
-            <!-- <fa-icon [icon]="faFileLines"></fa-icon> -->
-            
-            <!-- <div>
-                <a routerLink="/addApplication">
-                    <button class="w-full">
-                       <fa-icon class="text-white" [icon]="faPlus"></fa-icon>
-                    </button>
-                </a>
-            </div> -->
-        <!-- </div>
-        <div class="statisticContainer">
-            <app-job-statistics-card [title]="title1" [statistics]="pending"></app-job-statistics-card>
-            <app-job-statistics-card [title]="title2" [statistics]="processing"></app-job-statistics-card>
-            <app-job-statistics-card [title]="title3" [statistics]="accepted"></app-job-statistics-card>
-            <app-job-statistics-card [title]="title4" [statistics]="rejected"></app-job-statistics-card>
-        </div>
-    </div>
 
-    <div class="shadow font-semibold bg-white border">
-        <h2 class="p-2 text-center">Upcoming Interview</h2>
-        <hr/>
-        <div *ngFor="let application of upComingInterview">
-            <div class="text-center m-2 shadow border ">
-                <div>{{application.companyName}} </div>
-                <div>
-                    <fa-icon class="text-gray-500 text-lg" [icon]="faClock"></fa-icon>
-                    {{application.interviewDate | date}}
-                </div>
 
-            </div>
-        </div>
-    </div>
-    
-</div> -->
-
-<div class="stat-board  flex mx-20 my-5">
+<div class="flex mx-20 my-5">
     <div class="left bg-purple-700 w-1/5 flex flex-col justify-center items-center mx-1">
         <h2 class=" justify-center font-extrabold text-5xl mb-4 text-white">{{applicationList.length}}</h2>
         <h3 class="text-center font-bold text-xl text-white">
@@ -64,7 +22,7 @@
         </div>
 
     </div>
-    <div class="right w-1/5 bg-white">
+    <div class="right w-1/5 h-2/5 overflow-x-scroll bg-white">
         <h2 class="p-2 text-center bg-purple-700 text-white">Upcoming Interview</h2>
         <hr/>
         <div *ngFor="let application of upComingInterview">

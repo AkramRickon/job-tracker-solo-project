@@ -1,6 +1,11 @@
 
     <!-- <h2 class="text-2xl font-extrabold mx-20 mb-5 underline list-text">Job Application List</h2> -->
+<div>
+    <!-- sharing data between siblings -->
+    <app-job-application-statistics [applicationList]="applicationList"></app-job-application-statistics>
+
     <div class="flex mx-16 px-2 ">
+
         <app-application-item class="column p-3" [title]="title1" [applicationItems]="pending"
             (deleteApplicationEvent)="deleteApplicationFromList($event)">
         </app-application-item>
@@ -17,3 +22,4 @@
             (deleteApplicationEvent)="deleteApplicationFromList($event)">
         </app-application-item>
     </div>
+</div>
