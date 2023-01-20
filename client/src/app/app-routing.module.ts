@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UpdateApplicationComponent } from './update-application/update-application.component';
 import { HeaderComponent } from './components/header/header.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, canActivate: [AuthGuard] },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'updateApplication/:id', component: UpdateApplicationComponent, canActivate: [AuthGuard] },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: 'dashBoard', component: HeaderComponent }
+  { path: 'dashBoard', component: HeaderComponent },
+  { path : '**',component:PageNotFoundComponent}
 ];
 
 @NgModule({

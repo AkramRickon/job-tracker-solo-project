@@ -22,6 +22,7 @@ import { UpdateApplicationComponent } from './update-application/update-applicat
 import { RegisterComponent } from './register/register.component';
 import { JobApplicationStatisticsComponent } from './job-application-statistics/job-application-statistics.component';
 import { JobStatisticsCardComponent } from './job-statistics-card/job-statistics-card.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { JobStatisticsCardComponent } from './job-statistics-card/job-statistics
     RegisterComponent,
     JobApplicationStatisticsComponent,
     JobStatisticsCardComponent,
+    PageNotFoundComponent,
 
   ],
   imports: [

@@ -15,22 +15,22 @@ import { faListCheck } from '@fortawesome/free-solid-svg-icons';
 export class JobApplicationStatisticsComponent implements OnInit {
   @Input() applicationList!: Application[]
 
-  pending!: number
-  accepted!: number
-  processing!: number
-  rejected!: number
-  upComingInterview!: Application[]
+  pending: number = 0;
+  accepted: number = 0;
+  processing: number = 0;
+  rejected: number = 0;
+  upComingInterview: Application[] = [];
 
-  title1!: String
-  title2!: String
-  title3!: String
-  title4!: String
+  title1: String = ''
+  title2: String = ''
+  title3: String = ''
+  title4: String = ''
 
 
   faFileLines = faFileLines;
   faPlus = faPlus;
   faClock = faClock;
-  faListCheck=faListCheck;
+  faListCheck = faListCheck;
 
   constructor() { }
   ngOnInit(): void {
@@ -53,6 +53,8 @@ export class JobApplicationStatisticsComponent implements OnInit {
     this.processing = this.applicationList.filter(application => application.status === 'processing').length;
     this.upComingInterview = this.applicationList.filter(application => application.status === 'processing')
     this.upComingInterview = this.upComingInterview.sort((a, b) => new Date(a.interviewDate).getTime() - new Date(b.interviewDate).getTime());
+    
+    // this.upComingInterview = this.upComingInterview.sort((a, b) => new Date(a.interviewDate).toLocaleString() - new Date(b.interviewDate).toLocaleString());
     // this.upComingInterview=this.applicationList.filter(application=> new Date (application.interviewDate).getTime()> Date.now());
   }
 

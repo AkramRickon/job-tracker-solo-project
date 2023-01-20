@@ -1,0 +1,15 @@
+.container {
+    position: relative;
+    min-width: 100%;
+}
+
+.btn-contaner {
+    position: absolute;
+    top: 5%;
+    left: 8%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-bg {
+    background-color: #4F46E5;
+}
