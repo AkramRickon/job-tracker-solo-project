@@ -12,17 +12,16 @@
                 <section class=" dark:bg-gray-900">
                     <div class="flex flex-col items-center justify-center px-6 py-5 mx-auto ">
 
-                        <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                        <div class="w-full bg-white rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0">
                             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                                 <h1
-                                    class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white primaryText">
+                                    class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl primaryText">
                                     Register Account
                                 </h1>
                                 <form [formGroup]="registerForm" (ngSubmit)="handleRegister()"
                                     class="space-y-4 md:space-y-6">
                                     <div>
                                        
-
                                         <input formControlName="fullName" type="text" name="fullName" id="fullName"
                                         [ngClass]="{errorColor:registerFormControl.fullName.invalid && registerFormControl.fullName.touched}"
                                             class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
@@ -30,7 +29,6 @@
                                     </div>
 
                                     <div>
-                                       
                                         <input formControlName="email" type="email" name="email" id="email"
                                         [ngClass]="{errorColor:registerFormControl.email.invalid && registerFormControl.email.touched}"
                                             class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
@@ -38,7 +36,6 @@
                                     </div>
 
                                     <div>
-                                        
                                         <input formControlName="password" type="password" name="password" id="password"
                                             placeholder="password"
                                             [ngClass]="{errorColor:registerFormControl.password.invalid && registerFormControl.password.touched}"
@@ -46,11 +43,10 @@
                                             >
                                     </div>
 
-                                    <small *ngIf="registerFormControl.password.invalid && registerFormControl.password.touched" class="text-xs py-1 text-red">min length 8 charater</small>
+                                    <small *ngIf="registerFormControl.password.invalid && registerFormControl.password.touched" class="text-sm py-1 text-red-700">min password length 8 charater</small>
 
                                     <div>
-                                        <!-- <label for="confirmPassword"
-                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm Password</label> -->
+                                        
                                         <input formControlName="confirmPassword" type="password" name="confirmPassword" id="confirmPassword"
                                             placeholder="confirm password"
                                             class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
@@ -60,15 +56,21 @@
 
                                     
                                     <div *ngIf="isPassError"
-                                        class="flex p-1 rounded text-sm text-red-700 bg-red-100">
+                                        class="flex p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-gray-800 dark:text-red-400"
+                                        role="alert">
+                                        <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3"
+                                            fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span class="sr-only"></span>
                                         <div>
                                             <span class="font-medium">{{userError}}</span>
                                         </div>
                                     </div>
 
-
                                     <div>
-                                        
                                         <input formControlName="phoneNumber" type="text" name="phoneNumber"
                                             id="phoneNumber"
                                             [ngClass]="{errorColor:registerFormControl.phoneNumber.invalid && registerFormControl.phoneNumber.touched}"
@@ -76,7 +78,6 @@
                                             placeholder="+8801234567891">
                                     </div>
 
-                                    <!-- <div *ngIf="isError" class=" text-xs text-red-500"></div> -->
 
                                     <div *ngIf="isError"
                                         class="flex p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-gray-800 dark:text-red-400"
