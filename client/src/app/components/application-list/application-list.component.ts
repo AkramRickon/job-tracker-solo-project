@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Application } from '../interfaces/Application';
+import { Application } from '../../interfaces/Application';
 
 @Component({
   selector: 'app-application-list',
@@ -19,6 +19,8 @@ export class ApplicationListComponent implements OnInit {
   accepted!: Application[]
   processing!: Application[]
   rejected!: Application[]
+  upComingInterview!: Application[]
+
 
   constructor() { }
 
@@ -43,6 +45,8 @@ export class ApplicationListComponent implements OnInit {
     this.pending = this.applicationList.filter(application => application.status === ('pending'));
     this.rejected = this.applicationList.filter(application => application.status === 'rejected');
     this.processing = this.applicationList.filter(application => application.status === 'processing');
+    this.upComingInterview = this.applicationList.filter(application => application.status === 'processing')
+    this.upComingInterview = this.upComingInterview.sort((a, b) => new Date(a.interviewDate).getTime() - new Date(b.interviewDate).getTime());
   }
 
   deleteApplicationFromList(id: String) {

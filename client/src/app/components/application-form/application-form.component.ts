@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiClientService } from '../services/api-client.service';
-import { Application } from '../interfaces/Application';
-import { AuthService } from '../services/auth.service';
+import { ApiClientService } from '../../services/api-client.service';
+import { Application } from '../../interfaces/Application';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-application-form',

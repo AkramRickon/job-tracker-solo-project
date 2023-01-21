@@ -6,9 +6,9 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import { faDollar } from '@fortawesome/free-solid-svg-icons';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-import { ApiClientService } from '../services/api-client.service';
+import { ApiClientService } from '../../services/api-client.service';
 
-import { Application } from '../interfaces/Application';
+import { Application } from '../../interfaces/Application';
 
 @Component({
   selector: 'app-application-item',

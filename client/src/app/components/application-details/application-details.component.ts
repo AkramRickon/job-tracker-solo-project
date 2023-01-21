@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiClientService } from '../services/api-client.service';
-import { Application } from '../interfaces/Application';
+import { ApiClientService } from '../../services/api-client.service';
+import { Application } from '../../interfaces/Application';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -11,8 +11,8 @@ import { AuthService } from '../services/auth.service';
 export class RegisterComponent implements OnInit {
   registerForm = this.fb.group({
     fullName: ['', Validators.required],
-    email: ['', [Validators.required,Validators.email]],
-    password: ['', [Validators.required,Validators.minLength(8)]],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(8)]],
     confirmPassword: ['', Validators.required],
     phoneNumber: ['', Validators.required]
   })
@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   isSubmitted?: Boolean = false;
   userError: String = '';
   isError: Boolean = false;
-  isPassError:Boolean=false;
+  isPassError: Boolean = false;
 
   constructor(private authService: AuthService, private Router: Router, private fb: FormBuilder) { }
   ngOnInit(): void {
@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
 
       if (this.registerForm.value.password === this.registerForm.value.confirmPassword) {
         this.isPassError = false;
-        
+
         this.authService.proceedRegister(this.registerForm.value).subscribe({
           next: response => {
             this.isError = false;
@@ -51,11 +51,11 @@ export class RegisterComponent implements OnInit {
       }
 
       else {
-      
+
         this.isPassError = true;
         this.userError = 'Password did not match';
         this.registerForm.reset();
-        
+
       }
     }
   }

@@ -1,7 +1,7 @@
 <div class="text-center flex text-lg h-[48%] mx-1 mb-1 border shadow">
     <div class="flex justify-center items-center w-20 text-4xl bg-white"
         [ngClass]="{pendingNumber:title==='Pending' , processingNumber:title==='Processing' , acceptedNumber:title==='Accepted',rejectedNumber:title==='Rejected'}">
-        {{statistics}}</div>
+        {{statistics.length}}</div>
 
     <div class="flex justify-center items-center w-full font-semibold text-xl"
         [ngClass]="{pending:title==='Pending' , processing:title==='Processing' , accepted:title==='Accepted',rejected:title==='Rejected'}">

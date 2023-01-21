@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
           this.isError = false;
           this.isSubmitted = true;
           this.loginForm.reset();
-          
+
           setTimeout(() => {
             this.Router.navigate(['home']);
           }, 2000)
@@ -80,7 +80,7 @@ export class LoginComponent implements OnInit {
     // }
   }
 
-  get loginFormControl(){
+  get loginFormControl() {
     return this.loginForm.controls;
   }
 

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiClientService } from '../services/api-client.service';
-import { Application } from '../interfaces/Application';
-import { AuthService } from '../services/auth.service';
-import { formatDate } from '@angular/common' 
+import { ApiClientService } from '../../services/api-client.service';
+import { Application } from '../../interfaces/Application';
+import { AuthService } from '../../services/auth.service';
+import { formatDate } from '@angular/common'
 
 @Component({
   selector: 'app-update-application',
@@ -17,7 +17,7 @@ export class UpdateApplicationComponent implements OnInit {
   applicationId!: String;
   isSubmitted?: Boolean = false;
   user: String | null = '';
-  currentDate: Date= new Date();
+  currentDate: Date = new Date();
 
   applicationForm = this.formBuilder.group({
     companyName: ['', Validators.required],

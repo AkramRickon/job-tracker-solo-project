@@ -4,7 +4,7 @@ import { faUserCheck } from '@fortawesome/free-solid-svg-icons';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { faBarsProgress } from '@fortawesome/free-solid-svg-icons';
 import { faUserClock } from '@fortawesome/free-solid-svg-icons';
-import { Application } from '../interfaces/Application';
+import { Application } from '../../interfaces/Application';
 
 
 @Component({
@@ -12,10 +12,10 @@ import { Application } from '../interfaces/Application';
   templateUrl: './job-statistics-card.component.html',
   styleUrls: ['./job-statistics-card.component.css']
 })
-export class JobStatisticsCardComponent implements OnInit  {
-  @Input() statistics: number = 0
+export class JobStatisticsCardComponent implements OnInit {
+  @Input() statistics!: Application[]
   @Input() title?: String
-  @Input() applicationList : Application[]=[]
+  // @Input() applicationList : Application[]=[]
 
   faUserXmark = faUserXmark;
   faUserCheck = faUserCheck;
@@ -23,10 +23,10 @@ export class JobStatisticsCardComponent implements OnInit  {
   faBarsProgress = faBarsProgress;
   faUserClock = faUserClock;
 
-  constructor(){}
+  constructor() { }
   ngOnInit(): void {
-    
+
   }
-  
+
 
 }
