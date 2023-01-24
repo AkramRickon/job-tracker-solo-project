@@ -18,7 +18,7 @@ import { Application } from '../../interfaces/Application';
 export class ApplicationItemComponent implements OnInit {
 
   @Input() applicationItems!: Application[]
-  @Input() title!: String
+  @Input() title!: string
 
   @Output() deleteApplicationEvent = new EventEmitter()
 

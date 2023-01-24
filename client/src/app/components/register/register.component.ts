@@ -17,10 +17,10 @@ export class RegisterComponent implements OnInit {
     phoneNumber: ['', Validators.required]
   })
 
-  isSubmitted?: Boolean = false;
-  userError: String = '';
-  isError: Boolean = false;
-  isPassError: Boolean = false;
+  isSubmitted?: boolean = false;
+  userError: string = '';
+  isError: boolean = false;
+  isPassError: boolean = false;
 
   constructor(private authService: AuthService, private Router: Router, private fb: FormBuilder) { }
   ngOnInit(): void {
@@ -63,5 +63,4 @@ export class RegisterComponent implements OnInit {
   get registerFormControl() {
     return this.registerForm.controls;
   }
-
 }

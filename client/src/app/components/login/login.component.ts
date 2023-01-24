@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
 
   responseData: any;
   isSubmitted: boolean = false;
-  userError: String = '';
-  isError: Boolean = false;
+  userError: string = '';
+  isError: boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       this.authService.proceedLogin(this.loginForm.value).subscribe({
         next: response => {
           this.responseData = response;
-          console.log(response);
+          // console.log(response);
           localStorage.setItem('token', this.responseData.access_token);
           localStorage.setItem('user', this.responseData.email);
 

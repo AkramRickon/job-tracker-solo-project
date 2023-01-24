@@ -7,12 +7,12 @@ import { Application } from '../../interfaces/Application';
   styleUrls: ['./application-list.component.css']
 })
 export class ApplicationListComponent implements OnInit {
-  @Input() applicationList!: Application[]
+  @Input() applicationList: Application[]=[]
 
-  title1!: String
-  title2!: String
-  title3!: String
-  title4!: String
+  title1: string=''
+  title2: string=''
+  title3: string=''
+  title4: string=''
 
 
   pending!: Application[]
@@ -31,13 +31,6 @@ export class ApplicationListComponent implements OnInit {
     this.title2 = "Processing"
     this.title3 = "Accepted"
     this.title4 = "Rejected"
-
-    // console.log(this.applicationList)
-
-    // console.log(this.accepted);
-    // console.log(this.processing);
-    // console.log(this.pending);
-    // console.log(this.rejected);
   }
 
   filterApplication() {

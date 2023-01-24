@@ -1,114 +1,3 @@
-<!-- <div class="mt-12 mb-20 ">
-
-    <form [formGroup]="applicationForm" (ngSubmit)="handleUpdate()"
-        class="flex flex-col justify-center w-2/5 m-auto gap-2 p-3 shadow-lg">
-        <h2 class="text-xl font-semibold mb-2">Update Application Details</h2>
-        <div>
-    
-
-            <input type="text" id="cName" formControlName="companyName"
-                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="company name" required>
-        </div>
-
-        <div>
-    
-            <input type="text" id="position" formControlName="position"
-                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="position" required>
-        </div>
-
-        <div>
-  
-            <input type="text" id="location" formControlName="location"
-                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="job location" required>
-
-        </div>
-
-        <div>
-
-            <input type="text" id="jobNature" formControlName="jobNature"
-                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Job Nature" required>
-        </div>
-
-        <div>
-           
-            <input type="text" id="employmentType" formControlName="employmentType"
-                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Employment Type" required>
-
-        </div>
-
-        <div>
-          
-            <textarea id="details" rows="2" formControlName="details"
-                class=" form-control block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Job Details ...."></textarea>
-        </div>
-
-        <div>
-      
-            <input type="number" id="salary" formControlName="salary"
-                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Salary" required>
-        </div>
-
-        <div>
-            <label for="interviewDate" class=""><small>Interview Date</small></label>
-            
-            <input type="date" id="interviewDate" formControlName="interviewDate"
-                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Interview Date" required>
-        </div>
-
-        <div>
-         
-            <input type="text" id="jobLink" formControlName="jobLink"
-                class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Job Link" required>
-        </div>
-
-        <div>
-
-            
-
-
-            <label for="status" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an
-                option</label>
-            <select id="status" formControlName="status"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                <option selected disabled>Status</option>
-                <option value="pending">Pending</option>
-                <option value="accepted">Accepted</option>
-                <option value="processing">Processing</option>
-                <option value="rejected">Rejected</option>
-            </select>
-
-        </div>
-        <div>
-       
-            <button type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
-        </div>
-        <div *ngIf="isSubmitted"
-            class="flex p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-gray-800 dark:text-green-400"
-            role="alert">
-            <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                    clip-rule="evenodd"></path>
-            </svg>
-            <span class="sr-only">Info</span>
-            <div>
-                <span class="font-medium">Application Updated! </span> You are redirecting to Home page.
-            </div>
-        </div>
-
-    </form>
-</div> -->
 
 
 <section class="h-screen my-5">
@@ -141,10 +30,6 @@
                                     placeholder="position">
                             </div>
 
-
-
-
-
                             <div class="flex items-center gap-9">
 
                                 <div class="w-2/4">
@@ -160,12 +45,7 @@
                                         class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
                                         placeholder="salary">
                                 </div>
-
-
                             </div>
-
-
-
 
                             <div class="flex gap-9">
                                 <div class="w-2/4">
@@ -184,14 +64,12 @@
                                 </div>
                             </div>
 
-
                             <div>
                                 <textarea rows="2" formControlName="details" type="text" name="details" id="details"
                                     [ngClass]="{errorColor:applicationFormControl.details.invalid && applicationFormControl.details.touched}"
                                     class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
                                     placeholder="details"></textarea>
                             </div>
-
 
                             <div>
                                 <input formControlName="jobLink" type="text" name="jobLink" id="jobLink"
@@ -214,8 +92,6 @@
                                         class="bg-gray-100 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none focus:border-primary-600 block w-full p-2  placeholder-gray-400"
                                         placeholder="">
                                 </div>
-
-
 
                                 <div class="w-3/5">
                                     <label for="status"
@@ -250,7 +126,6 @@
                                 </div>
                             </div>
 
-
                         </form>
                     </div>
                 </div>
@@ -258,5 +133,4 @@
 
         </div>
     </div>
-
 </section>

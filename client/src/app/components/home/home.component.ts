@@ -10,7 +10,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  user: String | null = '';
+  user: string | null = '';
   applicationList?: Application[]
 
 
@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
     this.apiClient.getUserApplication(this.user).subscribe(response => {
       console.log(response);
       this.applicationList = response;
-      // console.log(this.applicationList);
     });
   }
 }

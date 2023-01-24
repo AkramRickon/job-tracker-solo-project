@@ -14,9 +14,9 @@ import { formatDate } from '@angular/common'
 export class UpdateApplicationComponent implements OnInit {
 
   applicationDetails!: Application;
-  applicationId!: String;
-  isSubmitted?: Boolean = false;
-  user: String | null = '';
+  applicationId!: string;
+  isSubmitted?: boolean = false;
+  user: string | null = '';
   currentDate: Date = new Date();
 
   applicationForm = this.formBuilder.group({
@@ -47,7 +47,7 @@ export class UpdateApplicationComponent implements OnInit {
     this.ActivatedRoute.params.forEach(params => this.applicationId = params['id']);
 
     this.apiClient.getApplicationById(this.applicationId).subscribe(response => {
-      console.log(response);
+      // console.log(response);
       this.applicationForm.controls['companyName'].setValue(response.companyName);
       this.applicationForm.controls['position'].setValue(response.position);
       this.applicationForm.controls['location'].setValue(response.location);
@@ -56,11 +56,12 @@ export class UpdateApplicationComponent implements OnInit {
       this.applicationForm.controls['details'].setValue(response.details);
       this.applicationForm.controls['jobLink'].setValue(response.jobLink);
       this.applicationForm.controls['status'].setValue(response.status);
+
       if(response.interviewDate){
         this.applicationForm.controls['interviewDate'].setValue(formatDate((response.interviewDate),'yyyy-MM-dd','en'));
       }
       // this.applicationForm.controls['interviewDate'].setValue(formatDate((response.interviewDate),'yyyy-MM-dd','en') || new Date ().toLocaleString());
-      this.applicationForm.controls['salary'].setValue(response.salary.toString());
+      this.applicationForm.controls['salary'].setValue(response.salary);
     })
   }
   handleUpdate() {

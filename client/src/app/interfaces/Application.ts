@@ -5,7 +5,7 @@ export interface Application {
     location: string
     jobNature: string
     employmentType: string
-    salary: number
+    salary: string
     details: string
     appliedDate?: Date
     interviewDate: Date
