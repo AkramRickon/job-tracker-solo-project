@@ -9,16 +9,12 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faDollar } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+// import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import { faRoute } from '@fortawesome/free-solid-svg-icons';
 import { faMapPin } from '@fortawesome/free-solid-svg-icons';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
-
-
-
-
 
 @Component({
   selector: 'app-application-details',
@@ -28,13 +24,13 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons';
 export class ApplicationDetailsComponent implements OnInit {
 
   applicationDetails?: Application
-  applicationId!: String
+  applicationId: string='';
   faPaperPlane = faPaperPlane
   faArrowLeftLong = faArrowLeftLong
   faGlobe = faGlobe;
   faCalendarDays = faCalendarDays;
   faDollar = faDollar;
-  faBars = faBars;
+  // faBars = faBars;
   faPaperclip = faPaperclip;
   faUser = faUser;
   faLocationDot = faLocationDot;

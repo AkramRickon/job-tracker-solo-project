@@ -13,7 +13,7 @@ import { faBacon } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavBarComponent implements OnInit {
 
-  user: String | null = '';
+  user: string | null = '';
   faArrowRightFromBracket = faArrowRightFromBracket;
   faWorm = faWorm;
   faMap = faMap;

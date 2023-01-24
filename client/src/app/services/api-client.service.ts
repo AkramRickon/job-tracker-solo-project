@@ -14,15 +14,7 @@ export class ApiClientService {
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
-  getApplications(): Observable<Application[]> {
-    const httpOptions = {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `${this.token}`
-      }
-    };
-    return this.http.get<Application[]>(this.rootUrl, httpOptions);
-  }
+
 
   getUserApplication(email: any): Observable<Application[]> {
     const httpOptions = {

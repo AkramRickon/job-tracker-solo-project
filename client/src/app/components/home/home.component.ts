@@ -24,8 +24,9 @@ export class HomeComponent implements OnInit {
 
   getApplications() {
     this.apiClient.getUserApplication(this.user).subscribe(response => {
-      console.log(response);
+      // console.log(response);
       this.applicationList = response;
+      // console.log(this.applicationList);
     });
   }
 }

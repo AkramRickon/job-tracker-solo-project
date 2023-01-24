@@ -10,7 +10,7 @@ export class AuthService {
   authUrl = "http://localhost:3000"
   constructor(private httpClient: HttpClient) { }
 
-  loggedIn: Boolean = this.isLoggedIn();
+  loggedIn: boolean = this.isLoggedIn();
 
   proceedRegister(user: any) {
     return this.httpClient.post<User>(`${this.authUrl}/signup`, user);
@@ -32,8 +32,8 @@ export class AuthService {
     return localStorage.getItem('user');
   }
 
-  getResponse(){
-    return localStorage.getItem('response');
-  }
+  // getResponse(){
+  //   return localStorage.getItem('response');
+  // }
 
 }
