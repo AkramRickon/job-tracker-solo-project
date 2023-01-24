@@ -56,6 +56,9 @@ export class UpdateApplicationComponent implements OnInit {
       this.applicationForm.controls['details'].setValue(response.details);
       this.applicationForm.controls['jobLink'].setValue(response.jobLink);
       this.applicationForm.controls['status'].setValue(response.status);
+      if(response.interviewDate){
+        this.applicationForm.controls['interviewDate'].setValue(formatDate((response.interviewDate),'yyyy-MM-dd','en'));
+      }
       // this.applicationForm.controls['interviewDate'].setValue(formatDate((response.interviewDate),'yyyy-MM-dd','en') || new Date ().toLocaleString());
       this.applicationForm.controls['salary'].setValue(response.salary.toString());
     })

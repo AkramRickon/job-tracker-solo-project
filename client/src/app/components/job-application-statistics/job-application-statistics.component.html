@@ -1,6 +1,7 @@
 
 
-<div class="flex mx-20 my-5">
+<div class="flex mx-20 my-5 max-h-1/5">
+
     <div class="left bg-purple-700 w-1/5 flex flex-col justify-center items-center mx-1">
         <h2 class=" justify-center font-extrabold text-5xl mb-4 text-white">{{applicationList.length}}</h2>
         <h3 class="text-center font-bold text-xl text-white">
@@ -9,7 +10,7 @@
         
 
     </div>
-    <div class="middle w-3/5 flex mx-1">
+    <div class="w-3/5 flex mx-1">
         <div class="card1 w-full ">
 
             <app-job-statistics-card [title]="title1" [statistics]="pending"></app-job-statistics-card>
@@ -22,7 +23,7 @@
         </div>
 
     </div>
-    <div class="right w-1/5 h-2/5 overflow-x-scroll bg-white">
+    <div class="w-1/5 max-h-1/5 overflow-y-scroll bg-white">
         <h2 class="p-2 text-center bg-purple-700 text-white">Upcoming Interview</h2>
         <hr/>
         <div *ngFor="let application of upComingInterview">
