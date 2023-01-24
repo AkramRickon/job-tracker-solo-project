@@ -6,14 +6,12 @@ import { faWorm } from '@fortawesome/free-solid-svg-icons';
 import { faMap } from '@fortawesome/free-solid-svg-icons';
 import { faBacon } from '@fortawesome/free-solid-svg-icons';
 
-
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-
 
   user: String | null = '';
   faArrowRightFromBracket = faArrowRightFromBracket;
@@ -32,7 +30,6 @@ export class NavBarComponent implements OnInit {
   authCheck() {
     this.user = this.authService.getUser();
   }
-
 
   logOut() {
     localStorage.clear();
