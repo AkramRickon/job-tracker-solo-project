@@ -35,10 +35,15 @@ export class LoginComponent implements OnInit {
 
     if (this.loginForm.valid) {
       this.authService.proceedLogin(this.loginForm.value).subscribe({
-        next: response => {
-          this.responseData = response;
-          // console.log(response);
-          localStorage.setItem('token', this.responseData.access_token);
+        next: (response:any )=> {
+          this.responseData = response.body;
+
+        console.log(response.headers.get('authorization'));
+          
+          // localStorage.setItem('token', this.responseData.access_token);
+
+          localStorage.setItem('token', response.headers.get('authorization'));
+
           localStorage.setItem('user', this.responseData.email);
 
           this.isError = false;
