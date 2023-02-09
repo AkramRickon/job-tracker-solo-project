@@ -1,8 +1,8 @@
 
 
-<div>
+
     <!-- sharing data to children -->
-    <app-job-application-statistics
+    <app-job-application-statistics class="h-52"
      [applicationList]="applicationList"
      [pending]="pending"
      [accepted]="accepted"
@@ -30,4 +30,3 @@
             (deleteApplicationEvent)="deleteApplicationFromList($event)">
         </app-application-item>
     </div>
-</div>

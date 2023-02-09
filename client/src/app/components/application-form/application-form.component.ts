@@ -12,11 +12,6 @@ import { AuthService } from '../../services/auth.service';
 })
 export class ApplicationFormComponent implements OnInit {
 
-  // statusList = [
-  //   { name: "pending", value: 'pending' },
-  //   { name: "processing", value: 'processing' },
-  //   { name: "rejected", value: 'rejected' }
-  // ]
   user: String | null = '';
   isSubmitted?: Boolean = false;
 

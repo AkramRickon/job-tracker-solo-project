@@ -1,12 +1,12 @@
 <div class="border  p-3 height bg-gray-50 leading-loose overflow-y-scroll">
-    <span class="text-xl font-bold my-2"> {{title}}</span>
+    <div class="text-xl font-bold my-2 "> {{title}}</div>
 
 
-    <div class="border shadow my-4 p-2 rounded bg-white" *ngFor="let application of applicationItems">
+    <div class="border shadow my-4 p-2 rounded  bg-white" *ngFor="let application of applicationItems">
         <div class="flex justify-between">
             
             <span class="text-md font-bold  rounded-full"
-                [ngClass]="{pending:title==='Pending' , processing:title==='Processing' , accepted:title==='Accepted',rejected:title==='Rejected'}">{{application.companyName}}</span>
+                [ngClass]="{pending:title==='Pending' , processing:title==='Processing' , accepted:title==='Accepted',rejected:title==='Rejected'}">{{application.companyName.slice(0,8)}}</span>
             <div class="">
                 <button (click)="handleUpdate(application._id)">
 
