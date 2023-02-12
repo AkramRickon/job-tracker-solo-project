@@ -43,7 +43,6 @@ const getUser = async (req, res) => {
             
             if (isValidPassword) {
 
-
                 // Generate JWT token
                 const token = jwt.sign(
                     { _id: user._id },
@@ -53,10 +52,10 @@ const getUser = async (req, res) => {
                     });
 
                 res.status(200);
-                // res.setHeader("Authorization", 'Bearer ' + token);
+                res.setHeader("Authorization", 'Bearer ' + token);
                 res.json({
                     "success": true,
-                    "access_token": 'Bearer ' + token,
+                    // "access_token": 'Bearer ' + token,
                     "expiresIn": "7d",
                     "email": user.email,
                     // "data" : result,

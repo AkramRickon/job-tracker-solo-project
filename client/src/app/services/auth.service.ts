@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   proceedLogin(loginData: any) {
-    return this.httpClient.post(`${this.authUrl}/signin`, loginData);
+    return this.httpClient.post(`${this.authUrl}/signin`, loginData,{observe: 'response'});
   }
 
   isLoggedIn() {
