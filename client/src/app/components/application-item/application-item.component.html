@@ -6,7 +6,7 @@
         <div class="flex justify-between">
 
             <span class="text-md font-bold  rounded-full"
-                [ngClass]="{pending:title==='Pending' , processing:title==='Processing' , accepted:title==='Accepted',rejected:title==='Rejected'}">{{application.companyName.slice(0,8)}}</span>
+                [ngClass]="{pending:title==='Pending' , processing:title==='Processing' , accepted:title==='Accepted',rejected:title==='Rejected'}">{{application.companyName.slice(0,10)}}</span>
             <div class="">
                 <button (click)="handleUpdate(application._id)">
 
@@ -19,7 +19,8 @@
         </div>
         <div class="font-semibold text mt-2">{{application.position}}</div>
         <div class="text-base "><span>{{application.jobNature}}</span> <span class="fold-extrabold text-lg">,</span>
-            <span class="text-sm ml-2">{{application.employmentType}}</span> </div>
+            <span class="text-sm ml-2">{{application.employmentType}}</span>
+        </div>
 
         <div>
             <span class="text">
@@ -27,14 +28,14 @@
                 <span class="">{{application.salary}}
                 </span>
             </span>
+
+
+            <div class="bg-gray-200 text-center">
+                <button class="w-full" (click)="handleDetails(application._id)">
+                    <fa-icon class="m-2" [icon]="faPaperclip"></fa-icon>
+                    View Details
+                </button>
+            </div>
         </div>
 
-        <div class="bg-gray-200 text-center">
-            <button class="w-full" (click)="handleDetails(application._id)">
-                <fa-icon class="m-2" [icon]="faPaperclip"></fa-icon>
-                View Details
-            </button>
-        </div>
     </div>
-
-</div>

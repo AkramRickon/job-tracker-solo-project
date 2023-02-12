@@ -16,7 +16,7 @@
                             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                                 <h1
                                     class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl primaryText">
-                                    Register Account
+                                    Create Your Account
                                 </h1>
                                 <form [formGroup]="registerForm" (ngSubmit)="handleRegister()"
                                     class="space-y-4 md:space-y-6">
@@ -95,7 +95,7 @@
                                     </div>
 
                                     <button type="submit" [disabled]="!registerForm.valid" class="w-full  focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center   
-                                        sigUpButton ">Register</button>
+                                        sigUpButton ">Create an account</button>
 
                                     <div *ngIf="isSubmitted" class="flex p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg "
                                         role="alert">
