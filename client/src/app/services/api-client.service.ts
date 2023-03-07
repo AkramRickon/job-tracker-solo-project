@@ -9,7 +9,7 @@ import { AuthService } from './auth.service';
 })
 export class ApiClientService {
 
-  rootUrl = "http://localhost:3000/application"
+  rootUrl = "https://job-tracker-solo-project-3g13.vercel.app/application"
   token = this.authService.getToken();
 
   constructor(private http: HttpClient, private authService: AuthService) { }
