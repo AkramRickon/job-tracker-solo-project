@@ -6,7 +6,7 @@ Front End :
 Technology used : Angular , Tailwind
 
 Backend :
-Technology used : Express js , JWT
+Technology used : Express js , JWT <br>
 .env examplae : JWT_SECRET = abc123
 
 Database : MongoDB with Mongoose
