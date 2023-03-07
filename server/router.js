@@ -3,6 +3,10 @@ const applicationController = require('./controllers/application');
 const userController = require('./controllers/users');
 const { authMiddleware } = require('./middlewares/auth');
 
+router.get('/test',(req,res)=>{
+    res.send('Backend working');
+})
+
 router.get('/application', authMiddleware, applicationController.getApplications);
 
 router.get('/application/:id', authMiddleware, applicationController.getApplicationById);
