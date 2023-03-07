@@ -7,7 +7,7 @@ const { mongoose, uri } = require('./db');
 const PORT = process.env.SERVER_PORT || 3000;
 
 const corsConfig = {
-    origin: 'http://localhost:4200',
+    origin: 'https://job-tracker-solo-project.vercel.app',
     credentials: true,
     exposedHeaders: "Authorization"
 }
@@ -39,6 +39,7 @@ app.get('*', (req, res) => {
     catch (error) {
         console.log(error);
     }
+
 })();
 
 

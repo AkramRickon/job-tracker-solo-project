@@ -7,7 +7,7 @@ import { User } from '../interfaces/User';
 })
 export class AuthService {
 
-  authUrl = "http://localhost:3000"
+  authUrl = "https://job-tracker-solo-project-3g13.vercel.app"
   constructor(private httpClient: HttpClient) { }
 
   loggedIn: boolean = this.isLoggedIn();
@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   proceedLogin(loginData: any) {
-    return this.httpClient.post(`${this.authUrl}/signin`, loginData,{observe: 'response'});
+    return this.httpClient.post(`${this.authUrl}/signin`, loginData, { observe: 'response' });
   }
 
   isLoggedIn() {
@@ -28,7 +28,7 @@ export class AuthService {
     return localStorage.getItem('token')
   }
 
-  getUser(){
+  getUser() {
     return localStorage.getItem('user');
   }
 
