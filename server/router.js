@@ -3,7 +3,7 @@ const applicationController = require('./controllers/application');
 const userController = require('./controllers/users');
 const { authMiddleware } = require('./middlewares/auth');
 
-router.get('/test',(req,res)=>{
+router.get('/',(req,res)=>{
     res.send('Backend working');
 })
 
